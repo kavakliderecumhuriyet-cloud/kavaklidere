@@ -1,5 +1,8 @@
-# Kavaklıdere Mahallesi
+# Kavaklıdere Cumhuriyet Mahallesi
 
-Alaşehir / Manisa – mahalle bilgi sayfası.
+Alaşehir / Manisa – dijital mahalle portalı.
 
-Anonslar ve videolar `index.html` içindeki `SITE_DATA` bölümünde güncellenir.
+- İçerik (duyurular, ilanlar, evraklar, videolar): `data/veri.js`
+- Tasarım: `assets/site.css`, kod: `assets/app.js`
+- Yenileme planı: `docs/YENILEME-PLANI.md`
+- Eski sürümün yedeği: `yedek-2026-10-15` dalı

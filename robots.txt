@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /onizleme/
+Sitemap: https://kavakliderecumhuriyet-cloud.github.io/kavaklidere/sitemap.xml

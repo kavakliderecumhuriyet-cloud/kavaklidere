@@ -9,7 +9,7 @@
   --radius:14px; --radius-sm:10px;
   --display:"Bitter",Georgia,"Times New Roman",serif;
   --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --header-h:64px;
+  --header-h:80px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0F1712; --surface:#17221A; --surface-2:#1D2A21; --ink:#E6EEE5; --muted:#9BB0A0; --line:#2A3A2F;
@@ -53,7 +53,8 @@ button{font:inherit;cursor:pointer;color:inherit}
 .site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
 .site-header .wrap{display:flex;align-items:center;gap:16px;min-height:var(--header-h)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);margin-right:auto;min-width:0}
-.brand svg{width:44px;height:44px;flex:none}
+.brand{gap:12px}
+.brand svg{width:64px;height:64px;flex:none}
 /* Logo: açılışta meyveler sırayla belirir, üzerine gelince canlanır */
 .logo{overflow:visible;filter:drop-shadow(0 2px 4px rgba(0,0,0,.18))}
 .logo g[class^="lg-"],.lg-halka{transform-box:fill-box;transform-origin:center;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
@@ -68,8 +69,8 @@ button{font:inherit;cursor:pointer;color:inherit}
 .brand:hover .lg-hurma,.brand:focus-visible .lg-hurma{transform:translate(1.5px,-1px) rotate(10deg) scale(1.1)}
 .brand:hover .lg-zeytin,.brand:focus-visible .lg-zeytin{transform:translateY(1.5px) rotate(-5deg) scale(1.06)}
 .brand:active .logo{transform:scale(.94)}
-.brand strong{font-family:var(--display);font-size:18px;display:block;line-height:1.1}
-.brand small{display:block;font-size:12.5px;color:var(--muted)}
+.brand strong{font-family:var(--display);font-size:21px;display:block;line-height:1.1}
+.brand small{display:block;font-size:13.5px;color:var(--muted)}
 .menu{display:flex;gap:2px}
 .menu a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}
 .menu a:hover{color:var(--ink);background:var(--surface-2)}
@@ -83,7 +84,7 @@ button{font:inherit;cursor:pointer;color:inherit}
   .menu.open{display:flex}
   .menu a{border-radius:var(--radius-sm);padding:12px 14px;font-size:16px}
 }
-@media (max-width:420px){.brand small{display:none}.brand strong{font-size:16px}}
+@media (max-width:420px){:root{--header-h:68px}.brand svg{width:52px;height:52px}.brand small{display:none}.brand strong{font-size:18px}}
 
 /* ---------- Kahraman alanı ---------- */
 .hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:linear-gradient(135deg,#1E4A2A 0%,#2E6B3E 55%,#5A2848 130%)}

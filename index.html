@@ -158,6 +158,34 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
 .hero-cap{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:8px;z-index:2;color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 @media (prefers-reduced-motion:reduce){.hero video{display:none}}
 
+
+/* İlanlar, evrak, WhatsApp */
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#1F8F4E;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:10px 16px;border-radius:24px;border:0}
+.wa-btn:hover{background:#18763F}
+.wa-btn svg{width:18px;height:18px;flex:none}
+.wa-float{position:fixed;z-index:20;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.lead{margin:-12px 0 0;color:var(--muted);max-width:68ch}
+.ilan{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.ilan .kat{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ilan h3{font-family:var(--body);font-size:18px;font-weight:700}
+.ilan .fiyat{font-family:var(--display);font-size:24px;font-weight:800;color:var(--vine);font-variant-numeric:tabular-nums}
+.ilan p{margin:0;color:var(--muted)}
+.ilan .alt{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;padding-top:6px;border-top:1px solid var(--line)}
+.ilan .alt a{font-weight:700;color:var(--vine);text-decoration:none}
+.ilan.satildi{opacity:.6}.ilan.satildi .fiyat{text-decoration:line-through}
+.empty{border:1px dashed var(--line);border-radius:8px;padding:28px 20px;text-align:center;color:var(--muted)}
+.form-row{display:flex;gap:8px;flex-wrap:wrap}
+.form-row input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);text-transform:uppercase}
+.form-row button,.btn{font:inherit;font-weight:700;padding:10px 16px;border-radius:6px;border:0;background:var(--ink);color:var(--bg)}
+.card label{display:block;font-weight:600;margin-bottom:6px}
+.sonuc{margin-top:14px}
+.durum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:10px}
+.durum span{font-size:12px;font-weight:600;text-align:center;padding:6px 4px;border-radius:4px;background:var(--vine-soft);color:var(--muted)}
+.durum span.ok{background:var(--vine);color:var(--bg)}
+.durum span.now{background:var(--amber);color:#1D1406}
+.legend{display:grid;gap:6px;font-size:15px;color:var(--muted)}
+.legend b{color:var(--ink)}
+
 @media (max-width:760px){
   .onair{grid-template-columns:1fr}
   .now{padding:22px 18px 18px}
@@ -190,6 +218,8 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
     <nav aria-label="Ana menü">
       <button data-go="anasayfa" aria-current="page">Ana Sayfa</button>
       <button data-go="duyurular">Duyurular</button>
+      <button data-go="ilanlar">İlanlar</button>
+      <button data-go="evrak">Evrak Takibi</button>
       <button data-go="videolar">Videolar</button>
       <button data-go="koyumuz">Köyümüz</button>
       <button data-go="hizmetler">Hizmetler</button>
@@ -248,7 +278,7 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
     <div class="card">
       <h3 style="font-size:19px;margin-bottom:8px">Muhtardan</h3>
       <p style="margin:0;color:var(--muted)">Değerli komşularımız, hasat sezonu boyunca gösterdiğiniz dayanışma için teşekkür ederiz. Bağ yollarındaki tamir çalışmaları için talepleri muhtarlığa iletebilirsiniz.</p>
-      <p style="margin:10px 0 0;font-weight:600">— Mahalle Muhtarı</p>
+      <p style="margin:10px 0 0;font-weight:600">— Salih Taşlıyol, Mahalle Muhtarı</p>
     </div>
   </div>
 </section>
@@ -264,6 +294,40 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
     </div>
   </div>
   <div class="alist" id="alist"></div>
+</section>
+
+<!-- İLANLAR -->
+<section class="page" id="p-ilanlar" hidden>
+  <div class="sec-head"><h2>Satış ilanları</h2>
+    <a class="wa-btn" href="https://wa.me/905354350775?text=" data-wa="Merhaba Muhtarım, mahalle sitesinde yayınlanması için bir satış ilanı vermek istiyorum." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.4.6.6-2.3-.2-.4A7 7 0 0 1 12 5zm-3 3.5c-.2 0-.5.1-.7.3-.5.5-.8 1.1-.8 1.8 0 1.6 1.2 3.2 3 4.6 1.4 1 2.7 1.5 3.6 1.5.8 0 1.5-.4 1.9-1l.2-.6c0-.2-.1-.3-.3-.4l-1.6-.8c-.2-.1-.4 0-.5.1l-.6.8c-.1.1-.3.2-.5.1a5.6 5.6 0 0 1-2.6-2.4c-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.4 0-.5l-.7-1.6c-.1-.3-.3-.4-.5-.4z"/></svg>İlan ver</a></div>
+  <p class="lead">Mahallemizdeki tarla, bağ, zeytinlik, ev, hayvan ve eşya ilanları. İlanınızı muhtarlığa WhatsApp'tan gönderin, kontrol edildikten sonra burada yayınlanır.</p>
+  <div class="grid" id="ilanGrid"></div>
+</section>
+
+<!-- EVRAK -->
+<section class="page" id="p-evrak" hidden>
+  <h2 style="font-size:28px">Evrak takibi</h2>
+  <p class="lead" style="margin:0">Muhtarlığa verdiğiniz evrakın durumunu, teslimde size verilen takip numarasıyla sorgulayın.</p>
+  <div class="grid-2">
+    <form class="card" id="evrakForm" novalidate>
+      <label for="evrakNo">Takip numarası</label>
+      <div class="form-row"><input id="evrakNo" autocomplete="off" placeholder="Örn. KVK-0001"><button type="submit">Sorgula</button></div>
+      <div class="sonuc" id="evrakSonuc" aria-live="polite"></div>
+    </form>
+    <div class="card">
+      <h3 style="font-family:var(--body);font-size:17px;font-weight:700;margin-bottom:6px">Hazır olunca WhatsApp'tan haber alın</h3>
+      <p style="margin:0 0 12px;color:var(--muted)">Takip numaranızı yazın ve butona basın. Muhtarlığa hazır bir mesaj gider; evrakınız hazır olduğunda size WhatsApp'tan bildirim gönderilir.</p>
+      <div class="form-row"><input id="bildirimNo" autocomplete="off" placeholder="Takip numarası"></div>
+      <p style="margin:12px 0 0"><a class="wa-btn" id="bildirimBtn" href="https://wa.me/905354350775" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.4.6.6-2.3-.2-.4A7 7 0 0 1 12 5zm-3 3.5c-.2 0-.5.1-.7.3-.5.5-.8 1.1-.8 1.8 0 1.6 1.2 3.2 3 4.6 1.4 1 2.7 1.5 3.6 1.5.8 0 1.5-.4 1.9-1l.2-.6c0-.2-.1-.3-.3-.4l-1.6-.8c-.2-.1-.4 0-.5.1l-.6.8c-.1.1-.3.2-.5.1a5.6 5.6 0 0 1-2.6-2.4c-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.4 0-.5l-.7-1.6c-.1-.3-.3-.4-.5-.4z"/></svg>WhatsApp ile bildirim iste</a></p>
+    </div>
+  </div>
+  <div class="card legend">
+    <h3 style="font-family:var(--body);font-size:17px;font-weight:700">Durumlar ne anlama geliyor?</h3>
+    <div><b>Teslim alındı:</b> evrakınız muhtarlığa ulaştı.</div>
+    <div><b>İşlemde:</b> evrakınız hazırlanıyor veya ilgili kuruma gönderildi.</div>
+    <div><b>Hazır:</b> muhtarlıktan kimliğinizle teslim alabilirsiniz.</div>
+    <div><b>Teslim edildi:</b> işlem tamamlandı.</div>
+  </div>
 </section>
 
 <!-- VİDEOLAR -->
@@ -314,8 +378,9 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
   </div>
   <div class="grid-2">
     <div class="card svc"><h3>Mahalle Muhtarlığı</h3><dl>
+      <dt>Muhtar</dt><dd>Salih Taşlıyol</dd>
       <dt>Saat</dt><dd>Hafta içi 09:00–17:00</dd>
-      <dt>Telefon</dt><dd class="todo">eklenecek</dd>
+      <dt>WhatsApp</dt><dd><a href="https://wa.me/905354350775" target="_blank" rel="noopener">0535 435 07 75</a></dd>
       <dt>Adres</dt><dd>Kavaklıdere Mah., Alaşehir / Manisa</dd></dl></div>
     <div class="card svc"><h3>Kavaklıdere Aile Sağlığı Merkezi</h3><dl>
       <dt>Hizmet</dt><dd>Aile hekimliği (3 hekim)</dd>
@@ -331,11 +396,12 @@ footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8
 </section>
 </main>
 
+<a class="wa-btn wa-float" href="https://wa.me/905354350775" data-wa="Merhaba Muhtarım, " target="_blank" rel="noopener" aria-label="Muhtara WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.4.6.6-2.3-.2-.4A7 7 0 0 1 12 5zm-3 3.5c-.2 0-.5.1-.7.3-.5.5-.8 1.1-.8 1.8 0 1.6 1.2 3.2 3 4.6 1.4 1 2.7 1.5 3.6 1.5.8 0 1.5-.4 1.9-1l.2-.6c0-.2-.1-.3-.3-.4l-1.6-.8c-.2-.1-.4 0-.5.1l-.6.8c-.1.1-.3.2-.5.1a5.6 5.6 0 0 1-2.6-2.4c-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.4 0-.5l-.7-1.6c-.1-.3-.3-.4-.5-.4z"/></svg>Muhtara yaz</a>
 <footer><div class="wrap"><span>© 2026 Kavaklıdere Mahalle Muhtarlığı · Son güncelleme: <span id="upd"></span></span><span>Alaşehir · Manisa · Arka plan videoları: Pexels (Taiki Clochette, Zülfü Demir, Maison Delia)</span></div></footer>
 
 <script>
 /* === SİTE VERİLERİ: anonslar ve videolar burada güncellenir === */
-window.SITE_DATA={"guncelleme":"15 Ekim 2026, 09:36",
+window.SITE_DATA={"guncelleme":"15 Ekim 2026, 09:55",
 "anonslar":[
  {t:"onemli",title:"Araç muayenesi – 30 Ekim",text:"30 Ekim 2026 Cuma günü araç muayenesi yapılacaktır. Muayene için önceden randevu alınması gerekmektedir. Randevu, saat ve yer bilgisi için muhtarlığa başvurabilirsiniz.",d:"30",m:"Eki",when:"30 Ekim 2026, Cuma",from:"Muhtarlık"},
  {t:"acil",title:"Su kesintisi",text:"16 Ekim Cuma 09:00–14:00 arası tüm mahallede şebeke bakımı yapılacaktır. Lütfen önceden su depolayınız.",d:"16",m:"Eki",when:"16 Ekim, 09:00–14:00",from:"MASKİ / Muhtarlık"},
@@ -352,6 +418,12 @@ window.SITE_DATA={"guncelleme":"15 Ekim 2026, 09:36",
  {cat:"Kültür",title:"Alaşehir'in tarihi: Philadelphia'dan bugüne",dur:"9:30",th:"#5A2848",when:"3 hafta önce",s:"Alaşehir tarihi Philadelphia"},
  {cat:"Sağlık",title:"Grip aşısı hakkında merak edilenler",dur:"3:20",th:"#7A2F2A",when:"1 ay önce",s:"grip aşısı sağlık bakanlığı"},
  {cat:"Etkinlik",title:"Alaşehir Üzüm Festivali'nden görüntüler",dur:"7:54",th:"#8A6413",when:"1 ay önce",s:"Alaşehir üzüm festivali"}
+],
+"ilanlar":[
+ {kat:"Zeytinlik",baslik:"10 hektar zeytinlik",fiyat:"4.999.000 TL",aciklama:"Kavaklıdere'de 100 dönüm zeytinlik.",tarih:"15 Ekim 2026",tel:"",satildi:true,ornek:true}
+],
+"evraklar":[
+ {no:"KVK-0001",tur:"İkametgâh belgesi (örnek)",durum:"hazir",tarih:"15 Ekim 2026"}
 ]};
 </script>
 <script>
@@ -420,12 +492,37 @@ if(urgent)$("#stripText").textContent=urgent.title+": "+urgent.text;else documen
   play(0);
   setInterval(()=>{i=(i+1)%vids.length;const prev=vids.filter((_,j)=>j!==i);play(i);setTimeout(()=>prev.forEach(p=>{if(!p.classList.contains("on"))p.pause()}),1300)},6000);
 })();
+
+/* WhatsApp, ilanlar, evrak */
+const WA="905354350775";
+const waLink=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a=>a.href=waLink(a.dataset.wa));
+const ILAN=DATA.ilanlar||[];
+$("#ilanGrid").innerHTML=ILAN.length?ILAN.map(x=>`<article class="ilan${x.satildi?" satildi":""}">
+  <span class="kat">${esc(x.kat)}${x.satildi?" · SATILDI":""}${x.ornek?" · Örnek ilan":""}</span>
+  <h3>${esc(x.baslik)}</h3><div class="fiyat">${esc(x.fiyat)}</div><p>${esc(x.aciklama)}</p>
+  <div class="alt"><span>${esc(x.tarih)}</span>${x.tel&&!x.satildi?`<a href="tel:${esc(x.tel.replace(/\s/g,""))}">${esc(x.tel)}</a>`:""}</div></article>`).join("")
+  :`<div class="empty">Şu an yayında ilan yok. İlan vermek için muhtarlığa WhatsApp'tan yazın.</div>`;
+const EVRAK=DATA.evraklar||[];
+const ADIM=["alindi","islemde","hazir","teslim"],ADLAR=["Teslim alındı","İşlemde","Hazır","Teslim edildi"];
+$("#evrakForm").addEventListener("submit",e=>{e.preventDefault();
+  const no=$("#evrakNo").value.trim().toUpperCase(),out=$("#evrakSonuc");
+  if(!no){out.textContent="Lütfen takip numaranızı yazın.";return}
+  const r=EVRAK.find(x=>x.no.toUpperCase()===no);
+  if(!r){out.innerHTML=`<b>${esc(no)}</b> bulunamadı. Numarayı kontrol edin; sorun devam ederse muhtarlığa WhatsApp'tan yazın.`;return}
+  const k=ADIM.indexOf(r.durum);
+  out.innerHTML=`<div><b>${esc(r.no)}</b> · ${esc(r.tur)}</div><div style="color:var(--muted);font-size:14px">Son güncelleme: ${esc(r.tarih)}</div>
+   <div class="durum">${ADLAR.map((a,j)=>`<span class="${j<k?"ok":j===k?"now":""}">${a}</span>`).join("")}</div>`;
+  $("#bildirimNo").value=r.no;updBildirim();});
+function updBildirim(){const no=$("#bildirimNo").value.trim().toUpperCase();
+  $("#bildirimBtn").href=waLink("Merhaba Muhtarım, "+(no?no+" numaralı ":"")+"evrakım hazır olduğunda bana WhatsApp'tan haber verebilir misiniz?");}
+$("#bildirimNo").addEventListener("input",updBildirim);updBildirim();
 /* Bugün */
 const d=new Date();
 $("#today").textContent=d.toLocaleDateString("tr-TR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
 
 /* Sekmeler */
-const PAGES=["anasayfa","duyurular","videolar","koyumuz","hizmetler"];
+const PAGES=["anasayfa","duyurular","ilanlar","evrak","videolar","koyumuz","hizmetler"];
 function go(p){if(!PAGES.includes(p))p="anasayfa";
   PAGES.forEach(x=>$("#p-"+x).hidden=x!==p);
   $("#hero").hidden=p!=="anasayfa";

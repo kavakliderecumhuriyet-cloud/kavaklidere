@@ -373,7 +373,9 @@
     var T = D.teknik; if (!T) return;
     var link = "https://wa.me/" + T.whatsapp + "?text=" + encodeURIComponent("Merhaba Özkan Bey, Kavaklıdere sitesi hakkında teknik bir sorum var: ");
     $("#teknikAd").textContent = T.ad; $("#teknikWa").textContent = T.whatsappGoster; $("#teknikWa").href = link; $("#teknikBtn").href = link;
-    $("#fTeknik").textContent = T.ad + " · " + T.whatsappGoster; $("#fTeknik").href = link;
+    $("#fTeknikTxt").textContent = T.ad; $("#fTeknik").href = link; $("#fTeknikNo").textContent = "WhatsApp: " + T.whatsappGoster;
+    $("#teknikBtnTxt").textContent = T.ad + "'a yaz";
+    $("#svcTeknik").href = link; $("#svcTeknikAd").textContent = T.ad;
   })();
 
   /* ---------- Ziyaretçi sayacı ---------- */

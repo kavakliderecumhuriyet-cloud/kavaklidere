@@ -57,13 +57,13 @@ button{font:inherit;cursor:pointer;color:inherit}
 .brand strong{font-family:var(--display);font-size:18px;display:block;line-height:1.1}
 .brand small{display:block;font-size:12.5px;color:var(--muted)}
 .menu{display:flex;gap:2px}
-.menu a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}
+.menu a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;padding:8px 12px;border-radius:999px;transition:background .2s,color .2s}
 .menu a:hover{color:var(--ink);background:var(--surface-2)}
 .menu a[aria-current="page"]{color:var(--green-strong);background:var(--green-soft)}
 .icon-btn{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
 .icon-btn:hover{background:var(--surface-2)}
 .menu-btn{display:none}
-@media (max-width:980px){
+@media (max-width:1100px){
   .menu-btn{display:inline-grid}
   .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:8px max(16px,env(safe-area-inset-left,0px)) 14px;display:none}
   .menu.open{display:flex}
@@ -195,6 +195,7 @@ main{display:block}
 .news-card p{margin:0;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .news-card .dt{font-size:13.5px;color:var(--muted);display:flex;gap:6px 12px;flex-wrap:wrap}
 .news-card.pinned{border-color:var(--green)}
+.news .empty,.ilanlar .empty{grid-column:1/-1}
 .empty{border:1px dashed var(--line);border-radius:var(--radius);padding:28px 20px;text-align:center;color:var(--muted)}
 .archive-toggle{background:none;border:0;color:var(--green);font-weight:700;padding:6px 0}
 
@@ -230,6 +231,13 @@ a.svc:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .ilan p{margin:0;color:var(--muted)}
 .ilan .alt{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;padding-top:8px;border-top:1px solid var(--line)}
 .ilan.satildi{opacity:.65}.ilan.satildi .fiyat{text-decoration:line-through}
+
+.seg{display:inline-grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border-radius:999px;padding:4px;margin:8px 0 14px;min-width:min(320px,100%)}
+.seg a{text-align:center;text-decoration:none;font-weight:700;color:var(--muted);padding:10px 22px;border-radius:999px}
+.seg a[aria-selected="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow)}
+.dis{margin-top:20px;border-style:dashed}
+.dis h2{font-family:var(--body);font-size:17px;font-weight:700}
+.dis p{margin:6px 0 0}
 
 /* ---------- Evrak ---------- */
 .grid-2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}

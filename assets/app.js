@@ -281,34 +281,58 @@
     }, 6000);
   })();
 
-  /* ---------- İlanlar ---------- */
-  (function () {
-    var KATS = ["Tümü", "Ev ve arsa", "Tarla ve bağ", "Traktör ve tarım makineleri", "Hayvan", "İkinci el", "Tarım ürünleri", "İş ilanları", "Diğer"];
-    var L = (D.ilanlar || []).slice().sort(function (a, b) { return (a.satildi - b.satildi) || (a.tarih < b.tarih ? 1 : -1); });
-    var f = "Tümü", q = "";
-    $("#iFiltre").innerHTML = KATS.map(function (c, i) { return '<button type="button" aria-pressed="' + (i === 0) + '">' + c + "</button>"; }).join("");
+  /* ---------- İlanlar (satılık / kiralık) ---------- */
+  var setIlanTip = (function () {
+    var KATS = {
+      satilik: ["Tümü", "Ev ve daire", "Arsa", "Tarla ve bağ", "Traktör ve tarım makineleri", "Hayvan", "İkinci el", "Tarım ürünleri", "İş ilanları", "Diğer"],
+      kiralik: ["Tümü", "Daire", "Müstakil ev", "Arsa ve tarla", "İşyeri", "Diğer"]
+    };
+    var METIN = {
+      satilik: ["Satılık ilanlar", "Mahallemizdeki ev, daire, arsa, tarla, bağ, tarım makinesi, hayvan ve eşya ilanları. İlanlar muhtarlık kontrolünden sonra yayınlanır; telefon numarası yalnızca ilan sahibinin isteğiyle gösterilir.", "satılık bir ilan"],
+      kiralik: ["Kiralık ilanlar", "Mahallemizde kiralık daire, müstakil ev, arsa, tarla ve işyeri ilanları. İlanlar muhtarlık kontrolünden sonra yayınlanır; telefon numarası yalnızca ilan sahibinin isteğiyle gösterilir.", "kiralık bir ilan"]
+    };
+    var DIS = {
+      satilik: "https://www.google.com/search?q=" + encodeURIComponent("site:sahibinden.com satılık Alaşehir Kavaklıdere"),
+      kiralik: "https://www.google.com/search?q=" + encodeURIComponent("site:sahibinden.com kiralık Alaşehir Kavaklıdere")
+    };
+    var ALLI = (D.ilanlar || []).slice().sort(function (a, b) { return ((a.satildi || a.kiralandi ? 1 : 0) - (b.satildi || b.kiralandi ? 1 : 0)) || (a.tarih < b.tarih ? 1 : -1); });
+    var tip = "satilik", f = "Tümü", q = "";
+    function chips() {
+      $("#iFiltre").innerHTML = KATS[tip].map(function (c, i) { return '<button type="button" aria-pressed="' + (c === f) + '">' + c + "</button>"; }).join("");
+    }
     function render() {
+      var L = ALLI.filter(function (x) { return (x.tip || "satilik") === tip; });
       var r = L.filter(function (x) {
         var s = (x.baslik + " " + x.aciklama + " " + x.kat).toLocaleLowerCase("tr");
         return (f === "Tümü" || x.kat === f) && (!q || s.indexOf(q) >= 0);
       });
+      var bitti = function (x) { return x.satildi ? "SATILDI" : x.kiralandi ? "KİRALANDI" : ""; };
       $("#iListe").innerHTML = r.length ? r.map(function (x) {
-        return '<article class="ilan' + (x.satildi ? " satildi" : "") + '">' +
+        var b = bitti(x);
+        return '<article class="ilan' + (b ? " satildi" : "") + '">' +
           (x.foto ? '<img src="' + esc(x.foto) + '" alt="" loading="lazy" style="border-radius:10px;aspect-ratio:4/3;object-fit:cover">' : "") +
-          '<span class="kat">' + esc(x.kat) + (x.satildi ? " · SATILDI" : "") + (x.ornek ? " · Örnek ilan" : "") + "</span>" +
-          "<h3>" + esc(x.baslik) + '</h3><div class="fiyat">' + esc(x.fiyat) + "</div><p>" + esc(x.aciklama) + "</p>" +
+          '<span class="kat">' + esc(x.kat) + (b ? " · " + b : "") + (x.ornek ? " · Örnek ilan" : "") + "</span>" +
+          "<h3>" + esc(x.baslik) + '</h3><div class="fiyat">' + esc(x.fiyat) + (tip === "kiralik" && x.fiyat && !/ay/.test(x.fiyat) ? ' <small style="font-size:15px">/ ay</small>' : "") + "</div><p>" + esc(x.aciklama) + "</p>" +
           '<div class="alt"><span>' + fmtDate(x.tarih) + "</span>" +
-          (x.tel && !x.satildi ? '<a href="https://wa.me/' + esc(x.tel) + '" target="_blank" rel="noopener">Satıcıya yaz</a>' : "") + "</div></article>";
-      }).join("") : '<div class="empty">' + (L.length ? "Aramanıza uygun ilan yok." : "Şu an yayında ilan yok.") + ' İlan vermek için muhtarlığa WhatsApp\'tan yazın.</div>';
+          (x.tel && !b ? '<a href="https://wa.me/' + esc(x.tel) + '" target="_blank" rel="noopener">İlan sahibine yaz</a>' : "") + "</div></article>";
+      }).join("") : '<div class="empty">' + (L.length ? "Aramanıza uygun ilan yok." : "Şu an yayında " + (tip === "kiralik" ? "kiralık" : "satılık") + " ilan yok.") + " İlan vermek için muhtarlığa WhatsApp'tan yazın.</div>";
     }
     $("#iFiltre").addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return; f = b.textContent;
       $$("#iFiltre button").forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); render();
     });
     $("#iAra").addEventListener("input", function (e) { q = e.target.value.trim().toLocaleLowerCase("tr"); render(); });
-    $("#ilanVer").href = waLink("Merhaba Muhtarım, mahalle sitesinde yayınlanması için bir ilan vermek istiyorum.");
-    render();
+    return function (t) {
+      tip = t === "kiralik" ? "kiralik" : "satilik"; f = "Tümü";
+      $("#iBaslik").textContent = METIN[tip][0]; $("#iAciklama").textContent = METIN[tip][1];
+      $("#segSatilik").setAttribute("aria-selected", String(tip === "satilik"));
+      $("#segKiralik").setAttribute("aria-selected", String(tip === "kiralik"));
+      $("#ilanVer").href = waLink("Merhaba Muhtarım, mahalle sitesinde yayınlanması için " + METIN[tip][2] + " vermek istiyorum.");
+      $("#disLink").href = DIS[tip];
+      chips(); render();
+    };
   })();
+  setIlanTip("satilik");
 
   /* ---------- Evrak takibi ---------- */
   (function () {
@@ -366,17 +390,19 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
   /* ---------- Yönlendirme ---------- */
-  var VIEWS = ["", "duyurular", "ilanlar", "evrak", "videolar", "mahallemiz", "hizmetler"];
+  var VIEWS = ["", "duyurular", "ilanlar", "kiralik", "evrak", "videolar", "mahallemiz", "hizmetler"];
   function route() {
     var h = (location.hash || "").replace(/^#\/?/, ""), detail = null;
     if (/^d-/.test(h)) { detail = h.slice(2); h = lastRoute !== null ? lastRoute : "duyurular"; }
     if (VIEWS.indexOf(h) < 0) h = "";
     var changed = h !== lastRoute || !document.body.dataset.ready;
-    $$(".view").forEach(function (v) { v.hidden = v.dataset.view !== h; });
+    var vw = h === "kiralik" ? "ilanlar" : h;
+    if (vw === "ilanlar") setIlanTip(h === "kiralik" ? "kiralik" : "satilik");
+    $$(".view").forEach(function (v) { v.hidden = v.dataset.view !== vw; });
     $$("#menu a").forEach(function (a) { if (a.dataset.r === h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
     setMenu(false);
     lastRoute = h; document.body.dataset.ready = "1";
-    var t = { "": "Kavaklıdere Cumhuriyet Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "İlanlar", evrak: "Evrak takibi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
+    var t = { "": "Kavaklıdere Cumhuriyet Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "Satılık ilanlar", kiralik: "Kiralık ilanlar", evrak: "Evrak takibi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
     document.title = h ? t + " – Kavaklıdere Cumhuriyet Mahallesi" : t;
     if (detail) openDetail(detail);
     else { closeDetail(); if (changed) { window.scrollTo(0, 0); if (h) $("#icerik").focus({ preventScroll: true }); } }

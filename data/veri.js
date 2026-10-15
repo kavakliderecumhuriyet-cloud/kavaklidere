@@ -7,6 +7,8 @@
    - sabit: true → listenin başında sabitlenir
    - bitis: bu tarihten sonra duyuru arşive geçer (YYYY-AA-GG)
    - ornek: true → tasarım için yazılmış örnek, gerçek bilgi değildir
+   - İlanlar: tip "satilik" | "kiralik"; satilik için satildi:true, kiralik için kiralandi:true
+     Kiralık kategoriler: Daire, Müstakil ev, Arsa ve tarla, İşyeri, Diğer
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
@@ -60,7 +62,7 @@ window.SITE_DATA = {
   ],
 
   ilanlar: [
-    { id: "zeytinlik-10ha", kat: "Tarla ve bağ", baslik: "10 hektar zeytinlik", fiyat: "4.999.000 TL",
+    { id: "zeytinlik-10ha", tip: "satilik", kat: "Tarla ve bağ", baslik: "10 hektar zeytinlik", fiyat: "4.999.000 TL",
       aciklama: "Kavaklıdere'de 100 dönüm zeytinlik.", tarih: "2026-10-15", tel: "", satildi: true, ornek: true }
   ],
 

@@ -67,7 +67,8 @@
       <a href="#" data-r="">Ana Sayfa</a>
       <a href="#duyurular" data-r="duyurular">Duyurular</a>
       <a href="#hizmetler" data-r="hizmetler">Hizmetler</a>
-      <a href="#ilanlar" data-r="ilanlar">İlanlar</a>
+      <a href="#ilanlar" data-r="ilanlar">Satılık</a>
+      <a href="#kiralik" data-r="kiralik">Kiralık</a>
       <a href="#evrak" data-r="evrak">Evrak Takibi</a>
       <a href="#videolar" data-r="videolar">Videolar</a>
       <a href="#mahallemiz" data-r="mahallemiz">Mahallemiz</a>
@@ -171,14 +172,23 @@
 <!-- ================= İLANLAR ================= -->
 <div class="view wrap" data-view="ilanlar" hidden>
   <div class="page-head sec-head" style="align-items:flex-end">
-    <div><h1>Satış ilanları</h1><p>Mahallemizdeki ev, arsa, tarla, bağ, tarım makinesi, hayvan ve eşya ilanları. İlanlar muhtarlık kontrolünden sonra yayınlanır; telefon numarası yalnızca ilan sahibinin isteğiyle gösterilir.</p></div>
+    <div><h1 id="iBaslik">Satılık ilanlar</h1><p id="iAciklama">Mahallemizdeki ev, daire, arsa, tarla, bağ, tarım makinesi, hayvan ve eşya ilanları. İlanlar muhtarlık kontrolünden sonra yayınlanır; telefon numarası yalnızca ilan sahibinin isteğiyle gösterilir.</p></div>
     <a class="wa" id="ilanVer" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg>İlan ver</a>
+  </div>
+  <div class="seg" role="tablist" aria-label="İlan türü">
+    <a role="tab" href="#ilanlar" id="segSatilik">Satılık</a>
+    <a role="tab" href="#kiralik" id="segKiralik">Kiralık</a>
   </div>
   <div class="tools">
     <label class="search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4"/></svg><span class="sr">İlanlarda ara</span><input id="iAra" type="search" placeholder="İlanlarda ara…" autocomplete="off"></label>
   </div>
   <div class="tools"><div class="chips" id="iFiltre" role="group" aria-label="İlan kategorisi"></div></div>
   <div class="ilanlar" id="iListe"></div>
+  <aside class="card dis" aria-labelledby="h-dis">
+    <h2 id="h-dis">Sahibinden.com'daki ilanlar</h2>
+    <p class="muted">Kavaklıdere ve Alaşehir'deki diğer ilanlara Sahibinden.com'dan bakabilirsiniz. Bu ilanlar muhtarlık tarafından kontrol edilmemiştir.</p>
+    <p><a class="btn ghost" id="disLink" href="#" target="_blank" rel="noopener">Sahibinden.com'da ara ↗</a></p>
+  </aside>
 </div>
 
 <!-- ================= EVRAK ================= -->
@@ -302,7 +312,7 @@
     </div>
     <div>
       <h2>Sayfalar</h2>
-      <ul><li><a href="#duyurular">Duyurular</a></li><li><a href="#ilanlar">İlanlar</a></li><li><a href="#evrak">Evrak takibi</a></li><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#mahallemiz">Mahallemiz</a></li></ul>
+      <ul><li><a href="#duyurular">Duyurular</a></li><li><a href="#ilanlar">Satılık ilanlar</a></li><li><a href="#kiralik">Kiralık ilanlar</a></li><li><a href="#evrak">Evrak takibi</a></li><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#mahallemiz">Mahallemiz</a></li></ul>
     </div>
     <div>
       <h2>Önemli numaralar</h2>

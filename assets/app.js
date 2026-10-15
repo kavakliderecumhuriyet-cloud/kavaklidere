@@ -72,6 +72,8 @@
     $("#acilLink").textContent = (u.ornek ? "[Örnek] " : "") + u.baslik + ": " + u.metin;
     $("#acilLink").href = "#d-" + u.id;
     $("#acil").hidden = false;
+    // Kayma hızı metin uzunluğuna göre: yaklaşık saniyede 70 piksel
+    var run = $("#acilLink"); requestAnimationFrame(function () { run.style.setProperty("--acil-sure", Math.max(12, Math.round(run.scrollWidth / 70)) + "s"); });
     $("#acilKapat").addEventListener("click", function () { $("#acil").hidden = true; store.sset("acilKapali", u.id); });
   })();
 

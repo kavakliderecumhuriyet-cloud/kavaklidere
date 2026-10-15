@@ -44,7 +44,11 @@ button{font:inherit;cursor:pointer;color:inherit}
 .acil{background:#B3261E;color:#fff}
 .acil .wrap{display:flex;align-items:center;gap:12px;padding-block:8px;font-size:15px}
 .acil b{font-size:12px;letter-spacing:.1em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;flex:none}
-.acil a{color:#fff;font-weight:600;text-decoration:none;flex:1;min-width:0}
+.acil-track{flex:1;min-width:0;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+.acil a{color:#fff;font-weight:600;text-decoration:none}
+.acil-run{display:inline-block;padding-left:100%;animation:acilKay var(--acil-sure,22s) linear infinite}
+.acil-track:hover .acil-run,.acil-run:focus{animation-play-state:paused}
+@keyframes acilKay{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 .acil a:hover{text-decoration:underline}
 .acil button{background:none;border:0;color:#fff;padding:4px 6px;border-radius:6px;opacity:.85;flex:none}
 .acil button:hover{opacity:1;background:rgba(255,255,255,.15)}
@@ -328,4 +332,6 @@ footer .fine{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .hero video{display:none}
+  .acil-track{white-space:normal;-webkit-mask-image:none;mask-image:none}
+  .acil-run{padding-left:0}
 }

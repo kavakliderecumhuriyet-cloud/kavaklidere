@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Kavaklıdere Mahallesi (Alaşehir, Manisa) bilgi sayfası: güncel anonslar, duyurular, videolar ve hizmetler.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Kavaklıdere Mahallesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: köy anons panosu (hoparlör) en üstte, altında sekmeli bilgi sayfaları — bağ sıraları motifi */
+:root{
+  --bg:#F2F4EC; --surface:#FFFFFF; --ink:#1D2A21; --muted:#5A6A5E; --line:#D8DECF;
+  --vine:#3E6B45; --vine-soft:#E2EBDD; --amber:#B97A10; --amber-soft:#F6E8C8;
+  --grape:#5A2848; --grape-ink:#FFF4FA; --urgent:#B3261E; --urgent-soft:#FBE3E0;
+  --display:"Bitter",Georgia,"Times New Roman",serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121915; --surface:#1A231D; --ink:#E7EDE4; --muted:#9DAE9F; --line:#2D3A31;
+  --vine:#8CC394; --vine-soft:#22332A; --amber:#E7B04A; --amber-soft:#3A2E16;
+  --grape:#3A1830; --grape-ink:#FBE9F4; --urgent:#FF8A80; --urgent-soft:#3E1C1A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121915; --surface:#1A231D; --ink:#E7EDE4; --muted:#9DAE9F; --line:#2D3A31;
+  --vine:#8CC394; --vine-soft:#22332A; --amber:#E7B04A; --amber-soft:#3A2E16;
+  --grape:#3A1830; --grape-ink:#FBE9F4; --urgent:#FF8A80; --urgent-soft:#3E1C1A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+a{color:var(--vine)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+
+/* Kayan acil şerit */
+.strip{background:var(--urgent);color:#fff;font-weight:600;font-size:14px;overflow:hidden;white-space:nowrap}
+.strip .wrap{display:flex;gap:12px;align-items:center;padding-block:7px}
+.strip b{flex:none;letter-spacing:.08em;font-size:12px;background:rgba(255,255,255,.18);padding:2px 8px;border-radius:3px}
+.strip .track{overflow:hidden;flex:1;min-width:0}
+.strip .run{display:inline-block;padding-left:100%;animation:run 26s linear infinite}
+@keyframes run{to{transform:translateX(-100%)}}
+
+/* Başlık */
+header{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:14px}
+.brand{display:flex;gap:12px;align-items:center}
+.seal{width:44px;height:44px;flex:none}
+.brand h1{font-size:22px}
+.brand small{display:block;color:var(--muted);font-size:13px;letter-spacing:.02em}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{background:none;border:0;padding:8px 12px;border-radius:6px;color:var(--muted);font-weight:600;font-size:15px}
+nav button[aria-current="page"]{background:var(--vine-soft);color:var(--vine)}
+nav button:hover{color:var(--ink)}
+
+main{padding-block:28px 56px}
+section.page{display:grid;gap:28px}
+
+/* Anons panosu */
+.onair{background:var(--grape);color:var(--grape-ink);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.onair .now{padding:26px 28px 22px;display:grid;gap:14px;align-content:start;position:relative}
+.live{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.14em;font-weight:700}
+.dot{width:10px;height:10px;border-radius:50%;background:#FF5A4E;box-shadow:0 0 0 0 rgba(255,90,78,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,90,78,0)}100%{box-shadow:0 0 0 0 rgba(255,90,78,0)}}
+.bars{display:flex;gap:3px;align-items:flex-end;height:16px;margin-left:auto}
+.bars i{width:3px;background:currentColor;opacity:.7;animation:eq 1s ease-in-out infinite}
+.bars i:nth-child(2){animation-delay:-.3s}.bars i:nth-child(3){animation-delay:-.6s}.bars i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:4px}50%{height:16px}}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.t-acil{background:var(--urgent);color:#fff}.t-onemli{background:var(--amber);color:#1D1406}.t-bilgi{background:var(--vine);color:var(--bg)}
+.now h2{font-size:clamp(24px,3.4vw,34px);font-weight:800}
+.now p{margin:0;max-width:60ch;opacity:.92;font-size:17px}
+.meta{font-size:14px;opacity:.75;display:flex;gap:6px 16px;flex-wrap:wrap}
+.progress{height:3px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:#fff}
+.ctrl{display:flex;gap:8px}
+.ctrl button{background:rgba(255,255,255,.12);color:inherit;border:0;border-radius:6px;padding:7px 12px;font-weight:600;font-size:14px}
+.ctrl button:hover{background:rgba(255,255,255,.22)}
+.queue{background:rgba(0,0,0,.18);padding:18px 0;display:flex;flex-direction:column}
+.queue h3{font-family:var(--body);font-size:12px;letter-spacing:.14em;font-weight:700;opacity:.7;padding:0 20px 8px}
+.queue button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;text-align:left;background:none;border:0;color:inherit;padding:10px 20px;border-left:3px solid transparent}
+.queue button[aria-current="true"]{background:rgba(255,255,255,.08);border-left-color:#fff}
+.queue .q-t{font-weight:600;font-size:15px;line-height:1.3}
+.queue .q-m{grid-column:2;font-size:13px;opacity:.65}
+.queue .q-dot{width:8px;height:8px;border-radius:50%;margin-top:6px}
+
+.sample{font-size:13px;color:var(--muted);margin:-16px 0 0}
+
+/* Ortak */
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-head h2{font-size:24px}
+.link{background:none;border:0;color:var(--vine);font-weight:600;padding:0}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.grid-2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;min-width:0}
+
+/* Video kartları */
+.vid{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.vid:hover .play{transform:scale(1.08)}
+.thumb{aspect-ratio:16/9;max-width:100%;position:relative;display:grid;place-items:center;
+  background:repeating-linear-gradient(100deg,transparent 0 22px,rgba(255,255,255,.07) 22px 26px),var(--th,var(--vine))}
+.thumb .play{width:56px;height:40px;border-radius:10px;background:rgba(0,0,0,.55);display:grid;place-items:center;transition:transform .2s}
+.thumb .play::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.thumb .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.7);color:#fff;font-size:12px;font-weight:600;padding:1px 6px;border-radius:3px;font-variant-numeric:tabular-nums}
+.thumb .cat{position:absolute;left:10px;top:10px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.vid .body{padding:14px 16px 16px;display:grid;gap:4px}
+.vid h3{font-family:var(--body);font-size:16px;font-weight:700;line-height:1.3}
+.vid small{color:var(--muted);font-size:13px}
+
+/* Duyuru listesi */
+.alist{display:grid;gap:10px}
+.aitem{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px}
+.aitem .date{font-family:var(--display);font-weight:800;text-align:center;line-height:1;min-width:48px;color:var(--vine)}
+.aitem .date span{display:block;font-size:26px}
+.aitem .date small{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.aitem h3{font-family:var(--body);font-size:17px;font-weight:700;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.aitem p{margin:2px 0 0;color:var(--muted);max-width:68ch}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:20px;padding:6px 14px;font-size:14px;font-weight:600}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Köyümüz */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.facts div{background:var(--surface);padding:16px 18px}
+.facts b{display:block;font-family:var(--display);font-size:26px;font-weight:800;color:var(--vine);font-variant-numeric:tabular-nums}
+.facts span{font-size:14px;color:var(--muted)}
+.prose{max-width:68ch;display:grid;gap:12px}
+.prose p{margin:0}
+.calendar{width:100%;border-collapse:collapse;font-size:15px}
+.calendar td,.calendar th{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.calendar th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.calendar tr.cur td{background:var(--amber-soft)}
+.calendar td:first-child{font-weight:700;white-space:nowrap}
+.scroll{overflow-x:auto}
+
+/* Hizmetler */
+.svc h3{font-family:var(--body);font-size:17px;font-weight:700;margin-bottom:6px}
+.svc dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:15px}
+.svc dt{color:var(--muted)}
+.svc dd{margin:0}
+.todo{color:var(--amber);font-style:italic}
+.hot{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.hot div{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:14px 16px}
+.hot b{font-family:var(--display);font-size:30px;font-weight:800;display:block;font-variant-numeric:tabular-nums;color:var(--urgent)}
+.hot span{font-size:14px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:8px 20px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .onair{grid-template-columns:1fr}
+  .now{padding:22px 18px 18px}
+  nav{width:100%;overflow-x:auto;flex-wrap:nowrap}
+  nav button{white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){
+  .strip .run{animation:none;padding-left:0}
+  .dot,.bars i{animation:none}
+}
+</style>
+</head>
+<body>
+
+
+<div class="strip" role="region" aria-label="Acil duyuru">
+  <div class="wrap"><b>ACİL</b><div class="track"><span class="run" id="stripText">Su kesintisi: 16 Ekim Cuma 09:00–14:00 arası tüm mahallede şebeke bakımı yapılacaktır. Lütfen önceden su depolayınız.</span></div></div>
+</div>
+
+<header>
+  <div class="wrap head">
+    <div class="brand">
+      <svg class="seal" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="var(--vine)"/>
+        <g fill="var(--amber)"><circle cx="18" cy="20" r="3.4"/><circle cx="25" cy="20" r="3.4"/><circle cx="21.5" cy="26" r="3.4"/><circle cx="15" cy="26" r="3.4"/><circle cx="28" cy="26" r="3.4"/><circle cx="18.5" cy="31.5" r="3.4"/><circle cx="25" cy="31.5" r="3.4"/><circle cx="21.8" cy="36.4" r="2.8"/></g>
+        <path d="M22 16c0-4 2-6 6-7-1 4-3 6-6 7z" fill="var(--bg)"/>
+      </svg>
+      <div><h1>Kavaklıdere</h1><small>Alaşehir · Manisa · Mahalle Muhtarlığı</small></div>
+    </div>
+    <nav aria-label="Ana menü">
+      <button data-go="anasayfa" aria-current="page">Ana Sayfa</button>
+      <button data-go="duyurular">Duyurular</button>
+      <button data-go="videolar">Videolar</button>
+      <button data-go="koyumuz">Köyümüz</button>
+      <button data-go="hizmetler">Hizmetler</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ANA SAYFA -->
+<section class="page" id="p-anasayfa">
+  <div class="onair" aria-live="polite">
+    <div class="now">
+      <div class="live"><span class="dot"></span> ŞİMDİ YAYINDA · MAHALLE ANONSU
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+      <div><span class="tag" id="nowTag">Acil</span></div>
+      <h2 id="nowTitle">Su kesintisi</h2>
+      <p id="nowText"></p>
+      <div class="meta"><span id="nowWhen"></span><span id="nowFrom"></span></div>
+      <div class="progress"><span id="prog"></span></div>
+      <div class="ctrl">
+        <button id="prev" aria-label="Önceki anons">‹ Önceki</button>
+        <button id="pause" aria-label="Duraklat">Duraklat</button>
+        <button id="next" aria-label="Sonraki anons">Sonraki ›</button>
+      </div>
+    </div>
+    <div class="queue">
+      <h3>SIRADAKİ ANONSLAR</h3>
+      <div id="queue"></div>
+    </div>
+  </div>
+  <p class="sample">Örnek içerik: anonslar tasarımı göstermek için yazılmıştır, gerçek duyuru değildir.</p>
+
+  <div class="sec-head"><h2>Son videolar</h2><button class="link" data-go="videolar">Tüm videolar →</button></div>
+  <div class="grid" id="homeVids"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:19px;margin-bottom:8px">Bugün</h3>
+      <div id="today" style="color:var(--muted)"></div>
+      <ul style="margin:10px 0 0;padding-left:18px;display:grid;gap:4px">
+        <li>Muhtarlık açık: 09:00–17:00</li>
+        <li>Aile Sağlığı Merkezi: grip aşısı günü</li>
+        <li>Alaşehir'e dolmuş: her saat başı</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="font-size:19px;margin-bottom:8px">Muhtardan</h3>
+      <p style="margin:0;color:var(--muted)">Değerli komşularımız, hasat sezonu boyunca gösterdiğiniz dayanışma için teşekkür ederiz. Bağ yollarındaki tamir çalışmaları için talepleri muhtarlığa iletebilirsiniz.</p>
+      <p style="margin:10px 0 0;font-weight:600">— Mahalle Muhtarı</p>
+    </div>
+  </div>
+</section>
+
+<!-- DUYURULAR -->
+<section class="page" id="p-duyurular" hidden>
+  <div class="sec-head"><h2>Tüm duyurular</h2>
+    <div class="filters" role="group" aria-label="Duyuru türü">
+      <button data-f="hepsi" aria-pressed="true">Hepsi</button>
+      <button data-f="acil" aria-pressed="false">Acil</button>
+      <button data-f="onemli" aria-pressed="false">Önemli</button>
+      <button data-f="bilgi" aria-pressed="false">Bilgi</button>
+    </div>
+  </div>
+  <div class="alist" id="alist"></div>
+</section>
+
+<!-- VİDEOLAR -->
+<section class="page" id="p-videolar" hidden>
+  <div class="sec-head"><h2>Videolar</h2><small style="color:var(--muted)">Videolar YouTube'da açılır</small></div>
+  <div class="grid" id="allVids"></div>
+</section>
+
+<!-- KÖYÜMÜZ -->
+<section class="page" id="p-koyumuz" hidden>
+  <h2 style="font-size:28px">Kavaklıdere'yi tanıyın</h2>
+  <div class="facts">
+    <div><b>≈ 4.600</b><span>Nüfus (yaklaşık)</span></div>
+    <div><b>Alaşehir</b><span>Bağlı olduğu ilçe</span></div>
+    <div><b>Manisa</b><span>İl</span></div>
+    <div><b>Bağcılık</b><span>Başlıca geçim kaynağı</span></div>
+  </div>
+  <div class="prose">
+    <p>Kavaklıdere, Manisa'nın Alaşehir ilçesine bağlı bir mahalledir. Gediz havzasının bağ ovasında yer alır; çevresindeki bağlarda çekirdeksiz sultaniye üzümü yetiştirilir.</p>
+    <p>Mahallede aile sağlığı merkezi, okul ve muhtarlık hizmet verir. Alaşehir merkezine yakın konumu sayesinde ulaşım kolaydır.</p>
+    <p class="todo">Bu bölüme mahallenin tarihçesi, fotoğraflar ve önemli yerler eklenebilir.</p>
+  </div>
+  <div>
+    <h3 style="font-size:20px;margin-bottom:10px">Bağ takvimi</h3>
+    <div class="scroll">
+      <table class="calendar">
+        <thead><tr><th>Dönem</th><th>Bağda yapılan iş</th></tr></thead>
+        <tbody>
+          <tr><td>Ocak – Mart</td><td>Kış budaması, bağ temizliği</td></tr>
+          <tr><td>Nisan – Mayıs</td><td>Sürgün, yeşil budama, ilaçlama</td></tr>
+          <tr><td>Haziran – Temmuz</td><td>Sulama, salkım bakımı</td></tr>
+          <tr><td>Ağustos – Eylül</td><td>Hasat, sergide kurutma</td></tr>
+          <tr class="cur"><td>Ekim – Aralık</td><td>Kuru üzüm satışı, toprak işleme · <b>şu anki dönem</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section class="page" id="p-hizmetler" hidden>
+  <h2 style="font-size:28px">Hizmetler ve iletişim</h2>
+  <div class="hot">
+    <div><b>112</b><span>Acil çağrı</span></div>
+    <div><b>185</b><span>Su arıza</span></div>
+    <div><b>186</b><span>Elektrik arıza</span></div>
+    <div><b>187</b><span>Doğalgaz arıza</span></div>
+  </div>
+  <div class="grid-2">
+    <div class="card svc"><h3>Mahalle Muhtarlığı</h3><dl>
+      <dt>Saat</dt><dd>Hafta içi 09:00–17:00</dd>
+      <dt>Telefon</dt><dd class="todo">eklenecek</dd>
+      <dt>Adres</dt><dd>Kavaklıdere Mah., Alaşehir / Manisa</dd></dl></div>
+    <div class="card svc"><h3>Kavaklıdere Aile Sağlığı Merkezi</h3><dl>
+      <dt>Hizmet</dt><dd>Aile hekimliği (3 hekim)</dd>
+      <dt>Randevu</dt><dd>MHRS veya 182</dd>
+      <dt>Telefon</dt><dd class="todo">eklenecek</dd></dl></div>
+    <div class="card svc"><h3>Ulaşım</h3><dl>
+      <dt>Dolmuş</dt><dd>Alaşehir merkez, her saat başı</dd>
+      <dt>Son sefer</dt><dd class="todo">eklenecek</dd></dl></div>
+    <div class="card svc"><h3>Tarım</h3><dl>
+      <dt>Kurum</dt><dd>Alaşehir İlçe Tarım ve Orman Müdürlüğü</dd>
+      <dt>Konular</dt><dd>ÇKS kaydı, destekler, ilaçlama uyarıları</dd></dl></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Kavaklıdere Mahalle Muhtarlığı · Son güncelleme: <span id="upd"></span></span><span>Alaşehir · Manisa</span></div></footer>
+
+<script>
+/* === SİTE VERİLERİ: anonslar ve videolar burada güncellenir === */
+window.SITE_DATA={"guncelleme":"15 Ekim 2026, 06:43",
+"anonslar":[
+ {t:"acil",title:"Su kesintisi",text:"16 Ekim Cuma 09:00–14:00 arası tüm mahallede şebeke bakımı yapılacaktır. Lütfen önceden su depolayınız.",d:"16",m:"Eki",when:"16 Ekim, 09:00–14:00",from:"MASKİ / Muhtarlık"},
+ {t:"onemli",title:"Grip aşısı başladı",text:"65 yaş üstü ve kronik hastalığı olan vatandaşlarımız Aile Sağlığı Merkezi'ne kimlikleriyle başvurabilir.",d:"15",m:"Eki",when:"Hafta içi her gün",from:"Aile Sağlığı Merkezi"},
+ {t:"onemli",title:"ÇKS güncelleme hatırlatması",text:"Kuru üzüm üreticilerimiz Çiftçi Kayıt Sistemi bilgilerini İlçe Tarım Müdürlüğü'nde güncelleyebilir.",d:"14",m:"Eki",when:"Ay sonuna kadar",from:"İlçe Tarım Müdürlüğü"},
+ {t:"bilgi",title:"Okul aile birliği toplantısı",text:"Velilerimiz 20 Ekim Salı saat 18:30'da okul salonunda yapılacak toplantıya davetlidir.",d:"20",m:"Eki",when:"20 Ekim, 18:30",from:"Okul Müdürlüğü"},
+ {t:"bilgi",title:"Bağ yolu tamiri",text:"Doğu bağlar yolunda stabilize çalışması yapılacaktır. Traktör geçişlerinde dikkatli olunuz.",d:"22",m:"Eki",when:"22–24 Ekim",from:"Muhtarlık"},
+ {t:"bilgi",title:"Mahalle hayır yemeği",text:"Hasat sonu geleneksel hayır yemeği pazar günü öğle namazından sonra cami avlusunda verilecektir.",d:"18",m:"Eki",when:"18 Ekim, öğle",from:"Mahalle halkı"}
+],
+"videolar":[
+ {cat:"Haber",title:"Kavaklıdere'de hasat sonu: kuru üzüm sergileri",dur:"4:12",th:"#6B4A1A",when:"3 gün önce",s:"Alaşehir kuru üzüm hasat"},
+ {cat:"Muhtarlık",title:"Muhtardan ekim ayı bilgilendirmesi",dur:"6:48",th:"#3E6B45",when:"1 hafta önce",s:"Alaşehir Kavaklıdere"},
+ {cat:"Tarım",title:"Bağda kış budaması nasıl yapılır?",dur:"11:05",th:"#2F5560",when:"2 hafta önce",s:"bağ budaması nasıl yapılır"},
+ {cat:"Kültür",title:"Alaşehir'in tarihi: Philadelphia'dan bugüne",dur:"9:30",th:"#5A2848",when:"3 hafta önce",s:"Alaşehir tarihi Philadelphia"},
+ {cat:"Sağlık",title:"Grip aşısı hakkında merak edilenler",dur:"3:20",th:"#7A2F2A",when:"1 ay önce",s:"grip aşısı sağlık bakanlığı"},
+ {cat:"Etkinlik",title:"Alaşehir Üzüm Festivali'nden görüntüler",dur:"7:54",th:"#8A6413",when:"1 ay önce",s:"Alaşehir üzüm festivali"}
+]};
+</script>
+<script>
+const DATA=window.SITE_DATA;
+const ANONS=DATA.anonslar;
+const LBL={acil:"Acil",onemli:"Önemli",bilgi:"Bilgi"};
+const DOTC={acil:"var(--urgent)",onemli:"var(--amber)",bilgi:"var(--vine)"};
+const q="https://www.youtube.com/results?search_query=";
+const VIDS=DATA.videolar;
+const ytUrl=v=>v.url||(q+encodeURIComponent(v.s||v.title));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function vidCard(v){return `<a class="vid" href="${ytUrl(v)}" target="_blank" rel="noopener">
+ <div class="thumb" style="--th:${v.th}"><span class="cat">${esc(v.cat)}</span><span class="play" aria-hidden="true"></span><span class="dur">${v.dur}</span></div>
+ <div class="body"><h3>${esc(v.title)}</h3><small>Kavaklıdere TV · ${v.when}</small></div></a>`}
+$("#homeVids").innerHTML=VIDS.slice(0,3).map(vidCard).join("");
+$("#allVids").innerHTML=VIDS.map(vidCard).join("");
+
+/* Anons döngüsü */
+let cur=0,paused=false,start=performance.now();const DUR=8000;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function show(i){
+  cur=(i+ANONS.length)%ANONS.length;const a=ANONS[cur];
+  const tag=$("#nowTag");tag.textContent=LBL[a.t];tag.className="tag t-"+a.t;
+  $("#nowTitle").textContent=a.title;$("#nowText").textContent=a.text;
+  $("#nowWhen").textContent="🕒 "+a.when;$("#nowFrom").textContent="Duyuran: "+a.from;
+  $("#queue").innerHTML=ANONS.map((x,j)=>`<button data-i="${j}" aria-current="${j===cur}"><span class="q-dot" style="background:${DOTC[x.t]}"></span><span class="q-t">${esc(x.title)}</span><span class="q-m">${esc(x.when)}</span></button>`).join("");
+  start=performance.now();
+}
+$("#queue").addEventListener("click",e=>{const b=e.target.closest("button");if(b)show(+b.dataset.i)});
+$("#next").onclick=()=>show(cur+1);$("#prev").onclick=()=>show(cur-1);
+$("#pause").onclick=e=>{paused=!paused;e.target.textContent=paused?"Devam et":"Duraklat";start=performance.now()-(parseFloat($("#prog").style.width)||0)/100*DUR};
+function tick(now){
+  if(!paused){const p=Math.min(1,(now-start)/DUR);$("#prog").style.width=(p*100)+"%";if(p>=1)show(cur+1)}
+  requestAnimationFrame(tick)}
+show(0);requestAnimationFrame(tick);
+
+/* Duyuru listesi */
+function renderList(f){
+  $("#alist").innerHTML=ANONS.filter(a=>f==="hepsi"||a.t===f).map(a=>`<article class="aitem">
+   <div class="date"><span>${a.d}</span><small>${a.m}</small></div>
+   <div><h3>${esc(a.title)} <span class="tag t-${a.t}">${LBL[a.t]}</span></h3><p>${esc(a.text)}</p><p style="font-size:14px">${esc(a.when)} · ${esc(a.from)}</p></div></article>`).join("")}
+renderList("hepsi");
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderList(b.dataset.f)});
+
+$("#upd").textContent=DATA.guncelleme;
+const urgent=ANONS.find(a=>a.t==="acil");
+if(urgent)$("#stripText").textContent=urgent.title+": "+urgent.text;else document.querySelector(".strip").hidden=true;
+/* Bugün */
+const d=new Date();
+$("#today").textContent=d.toLocaleDateString("tr-TR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+
+/* Sekmeler */
+const PAGES=["anasayfa","duyurular","videolar","koyumuz","hizmetler"];
+function go(p){if(!PAGES.includes(p))p="anasayfa";
+  PAGES.forEach(x=>$("#p-"+x).hidden=x!==p);
+  document.querySelectorAll("nav button").forEach(b=>b.dataset.go===p?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current"));
+  try{history.replaceState(null,"","#"+p)}catch(e){}
+  scrollTo({top:0,behavior:reduce?"auto":"smooth"})}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b)go(b.dataset.go)});
+go((location.hash||"").slice(1));
+</script>
+
+</body>
+</html>

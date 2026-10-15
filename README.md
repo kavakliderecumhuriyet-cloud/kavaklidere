@@ -1,6 +1,6 @@
 # Kavaklıdere Cumhuriyet Mahallesi
 
-Alaşehir / Manisa – dijital mahalle portalı.
+Alaşehir / Manisa – dijital mahalle portalı: https://kavakliderem.com
 
 - İçerik (duyurular, ilanlar, evraklar, videolar): `data/veri.js`
 - Tasarım: `assets/site.css`, kod: `assets/app.js`

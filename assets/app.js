@@ -258,7 +258,7 @@
   loadWeather();
   setInterval(function () { if (!document.hidden && !$("[data-view='']").hidden) loadWeather(); }, 30 * 60000);
 
-  /* ---------- Arka plan videoları: her biri 6 sn ---------- */
+  /* ---------- Arka plan videoları: her biri 15 sn (kısa klipler döngüde) ---------- */
   (function () {
     var vids = $$("#hero video"), cap = $("#heroCap");
     var slow = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ""));
@@ -278,7 +278,7 @@
       if (document.hidden) return;
       var prev = i; i = (i + 1) % vids.length; play(i);
       setTimeout(function () { vids[prev].pause(); }, 1300);
-    }, 6000);
+    }, 15000);
   })();
 
   /* ---------- İlanlar (satılık / kiralık) ---------- */

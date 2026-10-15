@@ -152,6 +152,13 @@
         <a class="card svc" id="svcWa" href="#" target="_blank" rel="noopener"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20z"/></svg></span><h3>Muhtara yazın</h3><p id="svcWaText">WhatsApp üzerinden doğrudan muhtarımıza ulaşın.</p></a>
       </div>
     </section>
+
+    <section class="counter" id="sayac" aria-labelledby="h-sayac" hidden>
+      <h2 id="h-sayac" class="sr">Ziyaretçi sayacı</h2>
+      <div class="cnt"><span class="lbl">Toplam ziyaret</span><b id="cToplam" class="num">–</b></div>
+      <div class="cnt"><span class="lbl">Bugün</span><b id="cBugun" class="num">–</b></div>
+      <div class="cnt live-cnt" id="cCanliKutu" hidden><span class="lbl"><span class="dot" aria-hidden="true"></span>Şu an sitede</span><b id="cCanli" class="num">–</b></div>
+    </section>
   </div>
 </div>
 
@@ -287,6 +294,11 @@
     <div class="card info"><h2 style="font-family:var(--body);font-size:17px;font-weight:700">Kavaklıdere Aile Sağlığı Merkezi</h2><dl>
       <dt>Randevu</dt><dd>MHRS (mhrs.gov.tr) veya ALO 182</dd>
       <dt>Telefon</dt><dd class="pending">bilgi bekleniyor</dd></dl></div>
+    <div class="card info"><h2 style="font-family:var(--body);font-size:17px;font-weight:700">Teknik destek</h2><dl>
+      <dt>Görevli</dt><dd id="teknikAd"></dd>
+      <dt>WhatsApp</dt><dd><a id="teknikWa" href="#" target="_blank" rel="noopener"></a></dd>
+      <dt>Konular</dt><dd>Web sitesiyle ilgili teknik sorular ve hatalar</dd></dl>
+      <p style="margin:12px 0 0"><a class="wa" id="teknikBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg>Teknik soru sor</a></p></div>
     <div class="card info"><h2 style="font-family:var(--body);font-size:17px;font-weight:700">Tarım</h2><dl>
       <dt>Kurum</dt><dd>Alaşehir İlçe Tarım ve Orman Müdürlüğü</dd>
       <dt>Konular</dt><dd>ÇKS kaydı, destekler, ilaçlama uyarıları</dd></dl></div>
@@ -318,7 +330,13 @@
       <h2>Önemli numaralar</h2>
       <ul><li>112 · Acil çağrı</li><li>185 · Su arıza</li><li>186 · Elektrik arıza</li><li>187 · Doğalgaz arıza</li></ul>
     </div>
-    <p class="fine">Son güncelleme: <span id="fGuncel"></span> · Hava durumu verisi: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · Arka plan videoları: Pexels (Taiki Clochette, Zülfü Demir, Maison Delia)</p>
+    <div>
+      <h2>Teknik destek</h2>
+      <p style="margin:0">Site ile ilgili teknik sorular için</p>
+      <p style="margin:6px 0 0"><a id="fTeknik" href="#" target="_blank" rel="noopener"></a></p>
+      <p style="margin:12px 0 0" class="muted" id="fSayac"></p>
+    </div>
+    <p class="fine">Son güncelleme: <span id="fGuncel"></span> · Hava durumu verisi: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0) · Arka plan videoları: Pexels (Taiki Clochette, Zülfü Demir, Maison Delia) · Ziyaretçi sayacı kişisel veri toplamaz, sayım abacus.jasoncameron.dev ile yapılır</p>
   </div>
 </footer>
 

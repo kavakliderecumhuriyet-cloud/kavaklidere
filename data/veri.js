@@ -24,6 +24,11 @@ window.SITE_DATA = {
     whatsappGoster: "0535 435 07 75"
   },
 
+  teknik: { ad: "Teknik Görevli Özkan", whatsapp: "905366668666", whatsappGoster: "0536 666 86 66" },
+
+  // Ziyaretçi sayacı (abacus.jasoncameron.dev, hesap gerektirmez). canli: canlı sayım servisi kurulunca doldurulacak
+  sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
+
   duyurular: [
     { id: "arac-muayenesi", tur: "onemli", kat: "Muhtarlık", sabit: true,
       baslik: "Araç muayenesi – 30 Ekim",

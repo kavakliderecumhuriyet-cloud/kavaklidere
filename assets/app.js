@@ -368,6 +368,42 @@
   $("#waFloat").href = waLink("Merhaba Muhtarım, ");
   $("#svcWa").href = waLink("Merhaba Muhtarım, ");
   $("#svcWaText").textContent = "WhatsApp üzerinden muhtarımız " + (M.muhtar || "") + "'a ulaşın.";
+  /* ---------- Teknik destek ---------- */
+  (function () {
+    var T = D.teknik; if (!T) return;
+    var link = "https://wa.me/" + T.whatsapp + "?text=" + encodeURIComponent("Merhaba Özkan Bey, Kavaklıdere sitesi hakkında teknik bir sorum var: ");
+    $("#teknikAd").textContent = T.ad; $("#teknikWa").textContent = T.whatsappGoster; $("#teknikWa").href = link; $("#teknikBtn").href = link;
+    $("#fTeknik").textContent = T.ad + " · " + T.whatsappGoster; $("#fTeknik").href = link;
+  })();
+
+  /* ---------- Ziyaretçi sayacı ---------- */
+  (function () {
+    var S = D.sayac; if (!S || !window.fetch) return;
+    var real = /github\.io$|kavaklidere/i.test(location.hostname) && !/localhost|127\.0\.0\.1/.test(location.hostname);
+    var nf = new Intl.NumberFormat("tr-TR");
+    var day = TODAY.replace(/-/g, "");
+    var first = !store.sget("ziyaret-sayildi");
+    var op = first && real ? "hit" : "get";
+    function call(key, op2) {
+      return fetch(S.servis + "/" + op2 + "/" + S.ad + "/" + key).then(function (r) {
+        if (r.status === 404) return { value: 0 };
+        if (!r.ok) throw new Error(r.status); return r.json();
+      });
+    }
+    function countUp(el, to) {
+      if (reduce || to < 20) { el.textContent = nf.format(to); return; }
+      var t0 = performance.now(), from = Math.floor(to * 0.85);
+      (function step(now) { var p = Math.min(1, (now - t0) / 900), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = nf.format(Math.round(from + (to - from) * e)); if (p < 1) requestAnimationFrame(step); })(t0);
+    }
+    Promise.all([call("toplam", op), call("gun-" + day, op)]).then(function (v) {
+      if (first && real) store.sset("ziyaret-sayildi", "1");
+      $("#sayac").hidden = false;
+      countUp($("#cToplam"), v[0].value); countUp($("#cBugun"), v[1].value);
+      $("#fSayac").textContent = "Toplam " + nf.format(v[0].value) + " ziyaret · Bugün " + nf.format(v[1].value);
+    }).catch(function () { /* servis yanıt vermezse sayaç gizli kalır */ });
+  })();
+
   $("#fGuncel").textContent = fmtDate(D.guncelleme, { hour: "2-digit", minute: "2-digit" });
   (function () { var m = Number(new Intl.DateTimeFormat("en-US", { timeZone: TZ, month: "numeric" }).format(new Date()));
     $$("#takvim tr").forEach(function (tr) { if (tr.dataset.m.split(",").map(Number).indexOf(m) >= 0) { tr.className = "cur"; tr.lastElementChild.insertAdjacentHTML("beforeend", " · <b>şu anki dönem</b>"); } }); })();

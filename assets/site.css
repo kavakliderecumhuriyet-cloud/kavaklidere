@@ -285,6 +285,13 @@ table.cal tr.cur td{background:var(--amber-soft)}
 .soon h3{font-family:var(--body);font-size:16px;font-weight:700}
 .soon p{margin:6px 0 0;color:var(--muted);font-size:15px}
 
+/* ---------- Ziyaretçi sayacı ---------- */
+.counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:8px}
+.cnt{background:var(--surface);padding:18px 22px;display:grid;gap:4px}
+.cnt .lbl{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cnt .num{font-family:var(--display);font-size:clamp(30px,4vw,40px);font-weight:800;line-height:1;color:var(--green);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.live-cnt .num{color:var(--urgent)}
+
 /* ---------- WhatsApp ---------- */
 .wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:999px;border:0}
 .wa:hover{background:var(--wa-hover)}

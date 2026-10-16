@@ -31,7 +31,7 @@ window.SITE_DATA = {
 
   duyurular: [
     { id: "meme-kanseri-taramasi", tur: "onemli", kat: "Sağlık", sabit: true,
-      baslik: "Meme kanseri taraması için ücretsiz otobüs",
+      baslik: "Meme kanseri taraması için otobüs",
       metin: "Sağlık ocağımızdan duyurulur: Meme kanseri taraması yaptırmak isteyen kadınlar için otobüs kaldırılacaktır. Gitmek isteyenlerin sağlık ocağına giderek isim yazdırması gerekmektedir. Kişi sayısı sınırlıdır.",
       tarih: "2026-10-16", olay: "Kayıt: sağlık ocağında, kontenjan sınırlı", kaynak: "Sağlık Ocağı / Muhtar Salih Taşlıyol" },
 

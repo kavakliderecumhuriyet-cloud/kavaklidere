@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-16T12:17:00+03:00",
+  guncelleme: "2026-10-16T12:20:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -33,42 +33,7 @@ window.SITE_DATA = {
     { id: "meme-kanseri-taramasi", tur: "onemli", kat: "Sağlık", sabit: true,
       baslik: "Meme kanseri taraması için otobüs",
       metin: "Sağlık ocağımızdan duyurulur: Meme kanseri taraması yaptırmak isteyen kadınlar için otobüs kaldırılacaktır. Gitmek isteyenlerin sağlık ocağına giderek isim yazdırması gerekmektedir. Kişi sayısı sınırlıdır.",
-      tarih: "2026-10-16", olay: "Kayıt: sağlık ocağında, kontenjan sınırlı", kaynak: "Sağlık Ocağı / Muhtar Salih Taşlıyol" },
-
-    { id: "arac-muayenesi", tur: "onemli", kat: "Muhtarlık", sabit: true,
-      baslik: "Araç muayenesi – 30 Ekim",
-      metin: "30 Ekim 2026 Cuma günü araç muayenesi yapılacaktır. Muayene için önceden randevu alınması gerekmektedir. Randevu, saat ve yer bilgisi için muhtarlığa başvurabilirsiniz.",
-      tarih: "2026-10-15", olay: "30 Ekim 2026, Cuma", bitis: "2026-10-30", kaynak: "Muhtarlık" },
-
-    { id: "su-kesintisi", tur: "acil", kat: "Altyapı", ornek: true,
-      baslik: "Su kesintisi",
-      metin: "16 Ekim Cuma 09:00–14:00 arası tüm mahallede şebeke bakımı yapılacaktır. Lütfen önceden su depolayınız.",
-      tarih: "2026-10-15", olay: "16 Ekim, 09:00–14:00", bitis: "2026-10-16", kaynak: "MASKİ / Muhtarlık" },
-
-    { id: "grip-asisi", tur: "onemli", kat: "Sağlık", ornek: true,
-      baslik: "Grip aşısı başladı",
-      metin: "65 yaş üstü ve kronik hastalığı olan vatandaşlarımız Aile Sağlığı Merkezi'ne kimlikleriyle başvurabilir.",
-      tarih: "2026-10-15", olay: "Hafta içi her gün", kaynak: "Aile Sağlığı Merkezi" },
-
-    { id: "cks", tur: "onemli", kat: "Tarım", ornek: true,
-      baslik: "ÇKS güncelleme hatırlatması",
-      metin: "Kuru üzüm üreticilerimiz Çiftçi Kayıt Sistemi bilgilerini İlçe Tarım Müdürlüğü'nde güncelleyebilir.",
-      tarih: "2026-10-14", olay: "Ay sonuna kadar", kaynak: "İlçe Tarım Müdürlüğü" },
-
-    { id: "okul-toplantisi", tur: "bilgi", kat: "Eğitim", ornek: true,
-      baslik: "Okul aile birliği toplantısı",
-      metin: "Velilerimiz 20 Ekim Salı saat 18:30'da okul salonunda yapılacak toplantıya davetlidir.",
-      tarih: "2026-10-13", olay: "20 Ekim, 18:30", bitis: "2026-10-20", kaynak: "Okul Müdürlüğü" },
-
-    { id: "bag-yolu", tur: "bilgi", kat: "Altyapı", ornek: true,
-      baslik: "Bağ yolu tamiri",
-      metin: "Doğu bağlar yolunda stabilize çalışması yapılacaktır. Traktör geçişlerinde dikkatli olunuz.",
-      tarih: "2026-10-12", olay: "22–24 Ekim", bitis: "2026-10-24", kaynak: "Muhtarlık" },
-
-    { id: "hayir-yemegi", tur: "bilgi", kat: "Etkinlik", ornek: true,
-      baslik: "Mahalle hayır yemeği",
-      metin: "Hasat sonu geleneksel hayır yemeği pazar günü öğle namazından sonra cami avlusunda verilecektir.",
-      tarih: "2026-10-11", olay: "18 Ekim, öğle", bitis: "2026-10-18", kaynak: "Mahalle halkı" }
+      tarih: "2026-10-16", olay: "Kayıt: sağlık ocağında, kontenjan sınırlı", kaynak: "Sağlık Ocağı / Muhtar Salih Taşlıyol" }
   ],
 
   ilanlar: [

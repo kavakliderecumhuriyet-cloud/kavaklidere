@@ -371,6 +371,19 @@
   $("#muhtarKartWa").href = waLink("Merhaba Muhtarım, "); $("#muhtarKartNo").textContent = M.whatsappGoster || "";
   $("#svcWa").href = waLink("Merhaba Muhtarım, ");
   $("#svcWaText").textContent = "WhatsApp üzerinden muhtarımız " + (M.muhtar || "") + "'a ulaşın.";
+  /* ---------- Canlı kent kamerası (tıklayınca yüklenir) ---------- */
+  (function () {
+    var btn = $("#kameraBtn"); if (!btn) return;
+    var SRC = "https://embed.galata.ai/embed/706936764b4135356b2b553d?logo=rt&weather=1&exc=0&kvkk=1&autoplay=1&fillMode=1&camTitle=0&back=008ecc&fore=ffffff";
+    btn.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = SRC; f.title = "Alaşehir Belediyesi canlı kent kamerası";
+      f.allow = "autoplay; fullscreen; picture-in-picture"; f.allowFullscreen = true;
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      $("#kamera").appendChild(f); btn.remove();
+    });
+  })();
+
   /* ---------- Teknik destek ---------- */
   (function () {
     var T = D.teknik; if (!T) return;

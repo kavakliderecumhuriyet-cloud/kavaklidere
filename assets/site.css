@@ -304,6 +304,20 @@ table.cal tr.cur td{background:var(--amber-soft)}
 .soon h3{font-family:var(--body);font-size:16px;font-weight:700}
 .soon p{margin:6px 0 0;color:var(--muted);font-size:15px}
 
+/* ---------- Canlı kamera ---------- */
+.cam{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:var(--radius);overflow:hidden;background:#0F1A13;border:1px solid var(--line)}
+.cam iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cam-start{position:absolute;inset:0;width:100%;border:0;display:grid;place-content:center;justify-items:center;gap:10px;padding:20px;color:#fff;text-align:center;
+  background:radial-gradient(circle at 50% 45%,rgba(46,107,62,.55),rgba(10,22,14,.95) 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 2px,transparent 2px 4px),#0F1A13}
+.cam-start:hover .cam-play{transform:scale(1.07)}
+.cam-live{position:absolute;left:14px;top:12px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.14em;background:rgba(0,0,0,.45);padding:5px 10px;border-radius:999px}
+.cam-play{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;transition:transform .2s}
+.cam-play::after{content:"";border-left:22px solid #1F5230;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.cam-txt{font-weight:700;font-size:18px}
+.cam-sub{font-size:13.5px;opacity:.75;max-width:40ch}
+.cam-note{font-size:13.5px;margin:10px 0 0}
+@media (max-width:420px){.cam{aspect-ratio:4/3}.cam-sub{display:none}}
+
 /* ---------- Muhtar kartı ---------- */
 .muhtar-sec{padding-bottom:0}
 .muhtar-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;padding:0;overflow:hidden}

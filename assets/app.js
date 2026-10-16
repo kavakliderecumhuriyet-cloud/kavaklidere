@@ -312,9 +312,11 @@
       $("#iListe").innerHTML = r.length ? r.map(function (x) {
         var b = bitti(x);
         return '<article class="ilan' + (b ? " satildi" : "") + '">' +
-          (x.foto ? '<img src="' + esc(x.foto) + '" alt="" loading="lazy" style="border-radius:10px;aspect-ratio:4/3;object-fit:cover">' : "") +
+          (x.foto ? '<img src="' + esc(x.foto) + '" alt="' + esc(x.fotoAlt || "") + '" loading="lazy" style="border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover">' : "") +
           '<span class="kat">' + esc(x.kat) + (b ? " · " + b : "") + (x.ornek ? " · Örnek ilan" : "") + "</span>" +
           "<h3>" + esc(x.baslik) + '</h3><div class="fiyat">' + esc(x.fiyat) + (tip === "kiralik" && x.fiyat && !/ay/.test(x.fiyat) ? ' <small style="font-size:15px">/ ay</small>' : "") + "</div><p>" + esc(x.aciklama) + "</p>" +
+          (x.ozellik && x.ozellik.length ? '<div class="ozl">' + x.ozellik.map(function (o) { return "<span>" + esc(o) + "</span>"; }).join("") + "</div>" : "") +
+          (x.kaynakNo ? '<p class="kno">' + esc(x.kaynakNo) + "</p>" : "") +
           '<div class="alt"><span>' + fmtDate(x.tarih) + "</span>" +
           (x.tel && !b ? '<a href="https://wa.me/' + esc(x.tel) + '" target="_blank" rel="noopener">İlan sahibine yaz</a>' : "") + "</div></article>";
       }).join("") : '<div class="empty">' + (L.length ? "Aramanıza uygun ilan yok." : "Şu an yayında " + (tip === "kiralik" ? "kiralık" : "satılık") + " ilan yok.") + " İlan vermek için muhtarlığa WhatsApp'tan yazın.</div>";

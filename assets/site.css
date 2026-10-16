@@ -253,6 +253,9 @@ a.svc:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .ilan .fiyat{font-family:var(--display);font-size:24px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
 .ilan p{margin:0;color:var(--muted)}
 .ilan .alt{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;padding-top:8px;border-top:1px solid var(--line)}
+.ilan .ozl{display:flex;flex-wrap:wrap;gap:6px}
+.ilan .ozl span{font-size:12.5px;font-weight:600;background:var(--surface-2);color:var(--ink);padding:4px 9px;border-radius:999px}
+.ilan .kno{font-size:13px}
 .ilan.satildi{opacity:.65}.ilan.satildi .fiyat{text-decoration:line-through}
 
 .seg{display:inline-grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border-radius:999px;padding:4px;margin:8px 0 14px;min-width:min(320px,100%)}

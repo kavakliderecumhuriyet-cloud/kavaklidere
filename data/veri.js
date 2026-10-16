@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-16T20:30:00+03:00",
+  guncelleme: "2026-10-17T01:25:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -37,6 +37,13 @@ window.SITE_DATA = {
   ],
 
   ilanlar: [
+    { id: "kavaklidere-sanayi-arsasi-4614", tip: "satilik", kat: "Arsa",
+      baslik: "Ana yola cepheli 4.614 m² sanayi arsası",
+      fiyat: "16.990.000 TL",
+      aciklama: "Kavaklıdere Mahallesi'nde, Kavaklıdere Yolu'na cepheli, sanayi imarlı arsa sahibinden satılıktır. Müstakil tapulu, tapunun tamamı satılık. Su ve kanalizasyon altyapısı mevcut, kadastro yolu açılmış. Bitişikteki aynı sahibe ait yaklaşık 2.000 m² ve 409 m² iki parsel ilan fiyatına dahil değildir, talep halinde ayrıca görüşülür (üçü birlikte yaklaşık 7.023 m²). Emsal, gabari ve yapılaşma koşulları belediyeden teyit edilmelidir.",
+      ozellik: ["Ada 399 · Parsel 2", "4.614,47 m²", "Sanayi imarlı", "Müstakil tapu", "Su, kanalizasyon", "Krediye uygun değil", "Takas yok", "Sahibinden"],
+      foto: "assets/ilan-kavaklidere-sanayi-arsasi.jpg", fotoAlt: "TKGM parsel sorgu görünümünde 399 ada 2 parsel, Kavaklıdere Yolu kenarında",
+      kaynakNo: "Sahibinden.com ilan no 1187454670", tarih: "2026-09-26", tel: "" },
     { id: "zeytinlik-10ha", tip: "satilik", kat: "Tarla ve bağ", baslik: "10 hektar zeytinlik", fiyat: "4.999.000 TL",
       aciklama: "Kavaklıdere'de 100 dönüm zeytinlik.", tarih: "2026-10-15", tel: "", satildi: true, ornek: true }
   ],

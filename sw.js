@@ -1,7 +1,7 @@
 /* Kavaklıdere – servis çalışanı: hızlı açılış ve çevrimdışı görüntüleme
    HTML ve veri: önce internet, olmazsa önbellek (duyurular hep güncel kalır)
    Tasarım dosyaları: önbellekten anında, arka planda yenilenir */
-const SURUM = "kvk-v2";
+const SURUM = "kvk-v3";
 const TEMEL = ["/", "/index.html", "/assets/site.css", "/assets/app.js", "/data/veri.js",
   "/manifest.webmanifest", "/kurulum.html", "/assets/icon-192.png", "/assets/muhtar.jpg", "/assets/muhtar-kare.jpg", "/offline.html"];
 

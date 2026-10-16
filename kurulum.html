@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Uygulamayı Telefona Kur – Kavaklıdere Cumhuriyet Mahallesi</title>
+<meta name="description" content="Kavaklıdere mahalle uygulamasını Android ve iPhone'a resimli adımlarla kurun.">
+<link rel="canonical" href="https://kavakliderem.com/kurulum.html">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2E6B3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem("tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+  .k-head{padding-block:28px 8px}
+  .k-head h1{font-size:clamp(28px,4.5vw,40px)}
+  .k-head p{color:var(--muted);max-width:60ch;margin:8px 0 0}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 6px}
+  .tabs button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px}
+  .tabs button[aria-selected="true"]{background:var(--green);color:var(--on-green);border-color:var(--green)}
+  .steps-k{display:grid;gap:18px;align-items:start;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:18px}
+  .step-k{display:grid;gap:12px;justify-items:center;align-content:start;text-align:center}
+  .step-k .n{width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-weight:800;font-family:var(--display)}
+  .step-k p{margin:0;max-width:30ch;font-size:16px}
+  /* Telefon çizimi */
+  .ph{width:200px;height:380px;border-radius:30px;background:#111;padding:10px;box-shadow:var(--shadow);position:relative}
+  .scr{width:100%;height:100%;border-radius:22px;background:#F5F8F2;overflow:hidden;position:relative;font-family:var(--body);color:#17261B;font-size:11px}
+  .bar{height:34px;background:#2E6B3E;display:flex;align-items:center;gap:6px;padding:0 8px;color:#fff}
+  .url{flex:1;background:rgba(255,255,255,.2);border-radius:12px;padding:4px 8px;font-size:10px;white-space:nowrap;overflow:hidden}
+  .dots3{font-size:16px;font-weight:800;padding:0 4px;border-radius:50%}
+  .pg{padding:10px;display:grid;gap:6px}
+  .pg i{display:block;height:9px;border-radius:5px;background:#DCE5D6}
+  .pg i.s{width:60%}
+  .pg .hero-m{height:70px;border-radius:8px;background:linear-gradient(135deg,#1E4A2A,#2E6B3E)}
+  .menu-m{text-align:left;position:absolute;right:6px;top:38px;width:140px;background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.25);padding:6px 0;font-size:11px}
+  .menu-m div{padding:7px 10px}
+  .menu-m .hl{background:#E1EEDC;font-weight:700;color:#1F5230;outline:2px solid #E8A33A;outline-offset:-2px;border-radius:4px}
+  .bottom-m{position:absolute;left:0;right:0;bottom:0;height:40px;background:#fff;border-top:1px solid #DCE5D6;display:flex;justify-content:space-around;align-items:center;font-size:15px;color:#55675A}
+  .bottom-m .hl{color:#1F5230;background:#E1EEDC;border-radius:8px;padding:2px 8px;outline:2px solid #E8A33A}
+  .sheet{text-align:left;position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -6px 20px rgba(0,0,0,.2);padding:10px 0 14px;font-size:11px}
+  .sheet div{padding:7px 14px}
+  .sheet .hl{background:#E1EEDC;font-weight:700;color:#1F5230;outline:2px solid #E8A33A;outline-offset:-2px;border-radius:4px;margin:0 6px}
+  .dlg{position:absolute;left:14px;right:14px;top:120px;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:14px;text-align:left;display:grid;gap:8px}
+  .dlg .row{display:flex;align-items:center;gap:8px}
+  .dlg img{width:30px;height:30px;border-radius:8px}
+  .dlg .btns{display:flex;justify-content:flex-end;gap:12px;font-weight:700;font-size:11px}
+  .dlg .btns .ok{color:#fff;background:#2E6B3E;padding:5px 10px;border-radius:12px;outline:2px solid #E8A33A}
+  .home{position:absolute;inset:0;background:linear-gradient(160deg,#3A5F8A,#1F3550);padding:30px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px 6px;align-content:start}
+  .home span{display:grid;justify-items:center;gap:4px;color:#fff;font-size:9px}
+  .home span b{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.25);display:block}
+  .home span img{width:36px;height:36px;border-radius:10px;outline:2px solid #E8A33A;outline-offset:2px}
+  .safari{position:absolute;left:0;right:0;bottom:0;height:44px;background:#F2F2F2;border-top:1px solid #ddd;display:flex;justify-content:space-around;align-items:center;font-size:14px;color:#0A64D6}
+  .safari .hl{background:#DCEBFF;border-radius:8px;padding:2px 8px;outline:2px solid #E8A33A}
+  .k-panel[hidden]{display:none!important}
+  .tip{margin-top:22px}
+  .tip h2{font-family:var(--body);font-size:17px;font-weight:700}
+  .tip p{margin:6px 0 0;color:var(--muted)}
+  .back{display:inline-flex;margin-top:24px}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="assets/icon-192.png" width="40" height="40" alt="" style="border-radius:50%"><span><strong>Kavaklıdere</strong><small>Cumhuriyet Mahallesi · Alaşehir</small></span></a>
+  <a class="btn ghost" href="/">← Siteye dön</a>
+</div></header>
+
+<main class="wrap">
+  <div class="k-head">
+    <h1>Uygulamayı telefona kur</h1>
+    <p>Kavaklıdere uygulaması mağazadan değil, doğrudan <b>kavakliderem.com</b> sitesinden kurulur. Ücretsizdir, yer kaplamaz ve ana ekranınızda diğer uygulamalar gibi simgesiyle görünür. Önce telefonunuzda <b>kavakliderem.com</b> adresini açın, sonra aşağıdaki adımları izleyin.</p>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Telefon türü">
+    <button role="tab" aria-selected="true" data-t="chrome">Android · Chrome</button>
+    <button role="tab" aria-selected="false" data-t="samsung">Samsung İnternet</button>
+    <button role="tab" aria-selected="false" data-t="ios">iPhone · Safari</button>
+  </div>
+
+  <!-- ANDROID CHROME -->
+  <section class="k-panel" data-p="chrome">
+    <div class="steps-k">
+      <div class="step-k"><span class="n">1</span>
+        <div class="ph"><div class="scr"><div class="bar"><span class="url">kavakliderem.com</span><span class="dots3" style="outline:2px solid #E8A33A">⋮</span></div><div class="pg"><div class="hero-m"></div><i></i><i class="s"></i><i></i><i class="s"></i></div></div></div>
+        <p>Chrome'da <b>kavakliderem.com</b>'u açın ve sağ üstteki <b>⋮</b> (üç nokta) menüsüne dokunun.</p></div>
+      <div class="step-k"><span class="n">2</span>
+        <div class="ph"><div class="scr"><div class="bar"><span class="url">kavakliderem.com</span><span class="dots3">⋮</span></div><div class="pg"><div class="hero-m"></div><i></i><i class="s"></i></div>
+          <div class="menu-m"><div>Yeni sekme</div><div>Geçmiş</div><div>Paylaş…</div><div class="hl">Uygulamayı yükle</div><div>Ayarlar</div></div></div></div>
+        <p><b>Uygulamayı yükle</b>'yi seçin. Bazı telefonlarda bu seçenek <b>Ana ekrana ekle</b> diye yazar.</p></div>
+      <div class="step-k"><span class="n">3</span>
+        <div class="ph"><div class="scr"><div class="bar"><span class="url">kavakliderem.com</span></div><div class="pg"><div class="hero-m"></div></div>
+          <div class="dlg"><div class="row"><img src="assets/icon-192.png" alt=""><b>Kavaklıdere</b></div><span style="color:#55675A">kavakliderem.com</span><div class="btns"><span>İptal</span><span class="ok">Yükle</span></div></div></div></div>
+        <p>Çıkan pencerede <b>Yükle</b>'ye dokunun.</p></div>
+      <div class="step-k"><span class="n">4</span>
+        <div class="ph"><div class="scr"><div class="home"><span><b></b>Telefon</span><span><b></b>Mesajlar</span><span><b></b>Kamera</span><span><b></b>Galeri</span><span><b></b>WhatsApp</span><span><img src="assets/icon-192.png" alt="">Kavaklıdere</span><span><b></b>Ayarlar</span></div></div></div>
+        <p>Uygulama ana ekranınızda. Simgeye dokunarak açın.</p></div>
+    </div>
+  </section>
+
+  <!-- SAMSUNG -->
+  <section class="k-panel" data-p="samsung" hidden>
+    <div class="steps-k">
+      <div class="step-k"><span class="n">1</span>
+        <div class="ph"><div class="scr"><div class="bar" style="background:#fff;color:#17261B"><span class="url" style="background:#EEF3EA">kavakliderem.com</span></div><div class="pg"><div class="hero-m"></div><i></i><i class="s"></i></div>
+          <div class="bottom-m"><span>‹</span><span>›</span><span>⌂</span><span>☆</span><span class="hl">≡</span></div></div></div>
+        <p>Samsung İnternet'te sayfayı açın ve <b>alttaki ≡</b> (üç çizgi) menüsüne dokunun.</p></div>
+      <div class="step-k"><span class="n">2</span>
+        <div class="ph"><div class="scr"><div class="bar" style="background:#fff;color:#17261B"><span class="url" style="background:#EEF3EA">kavakliderem.com</span></div><div class="pg"><div class="hero-m"></div></div>
+          <div class="sheet"><div>Yer imleri</div><div>Geçmiş</div><div class="hl">＋ Sayfayı ekle</div><div>Ayarlar</div></div></div></div>
+        <p><b>Sayfayı ekle</b>'ye dokunun.</p></div>
+      <div class="step-k"><span class="n">3</span>
+        <div class="ph"><div class="scr"><div class="bar" style="background:#fff;color:#17261B"><span class="url" style="background:#EEF3EA">kavakliderem.com</span></div><div class="pg"><div class="hero-m"></div></div>
+          <div class="sheet"><div>Yer imleri</div><div>Hızlı erişim</div><div class="hl">Ana ekran</div></div></div></div>
+        <p><b>Ana ekran</b>'ı seçin, ardından <b>Ekle</b>'ye dokunun.</p></div>
+      <div class="step-k"><span class="n">4</span>
+        <div class="ph"><div class="scr"><div class="home"><span><b></b>Telefon</span><span><b></b>Mesajlar</span><span><b></b>Kamera</span><span><b></b>Galeri</span><span><b></b>WhatsApp</span><span><img src="assets/icon-192.png" alt="">Kavaklıdere</span><span><b></b>Ayarlar</span></div></div></div>
+        <p>Uygulama ana ekranınızda.</p></div>
+    </div>
+  </section>
+
+  <!-- IPHONE -->
+  <section class="k-panel" data-p="ios" hidden>
+    <div class="steps-k">
+      <div class="step-k"><span class="n">1</span>
+        <div class="ph"><div class="scr"><div class="pg" style="padding-top:16px"><div class="hero-m"></div><i></i><i class="s"></i><i></i></div>
+          <div class="safari"><span>‹</span><span>›</span><span class="hl">⬆︎</span><span>📖</span><span>⧉</span></div></div></div>
+        <p><b>Safari</b>'de <b>kavakliderem.com</b>'u açın ve alttaki <b>Paylaş</b> simgesine (kutudan çıkan ok) dokunun.</p></div>
+      <div class="step-k"><span class="n">2</span>
+        <div class="ph"><div class="scr"><div class="pg" style="padding-top:16px"><div class="hero-m"></div></div>
+          <div class="sheet"><div>Kopyala</div><div>Okuma Listesine Ekle</div><div class="hl">⊞ Ana Ekrana Ekle</div><div>Yer İşareti Ekle</div></div></div></div>
+        <p>Listeyi aşağı kaydırın ve <b>Ana Ekrana Ekle</b>'yi seçin.</p></div>
+      <div class="step-k"><span class="n">3</span>
+        <div class="ph"><div class="scr"><div class="bar" style="background:#F2F2F2;color:#17261B;justify-content:space-between;font-weight:600"><span style="color:#0A64D6">Vazgeç</span><span>Ana Ekrana Ekle</span><span style="color:#0A64D6;outline:2px solid #E8A33A;border-radius:6px;padding:0 4px">Ekle</span></div>
+          <div class="pg"><div class="dlg" style="position:static"><div class="row"><img src="assets/icon-192.png" alt=""><b>Kavaklıdere</b></div><span style="color:#55675A">kavakliderem.com</span></div></div></div></div>
+        <p>Sağ üstteki <b>Ekle</b>'ye dokunun.</p></div>
+      <div class="step-k"><span class="n">4</span>
+        <div class="ph"><div class="scr"><div class="home"><span><b></b>Telefon</span><span><b></b>Mesajlar</span><span><b></b>Kamera</span><span><b></b>Fotoğraflar</span><span><b></b>WhatsApp</span><span><img src="assets/icon-192.png" alt="">Kavaklıdere</span><span><b></b>Ayarlar</span></div></div></div>
+        <p>Uygulama ana ekranınızda.</p></div>
+    </div>
+    <p class="muted" style="margin-top:14px">Not: iPhone'da bu işlem yalnızca <b>Safari</b> ile yapılabilir. Chrome veya başka bir tarayıcı kullanıyorsanız adresi Safari'de açın.</p>
+  </section>
+
+  <div class="card tip">
+    <h2>Menüde seçeneği bulamıyor musunuz?</h2>
+    <p>Sayfanın tamamen yüklendiğinden emin olun ve birkaç saniye bekleyip menüyü tekrar açın. Uygulama zaten kuruluysa seçenek görünmez; ana ekranınızda <b>Kavaklıdere</b> simgesine bakın. Yardım için sitenin altındaki <b>Teknik destek</b> butonundan WhatsApp ile yazabilirsiniz.</p>
+  </div>
+  <a class="btn back" href="/">← Kavaklıdere ana sayfasına dön</a>
+</main>
+<footer><div class="wrap"><p class="fine" style="margin:0">Kavaklıdere Cumhuriyet Mahallesi · Alaşehir / Manisa</p></div></footer>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll(".tabs button")),pan=[].slice.call(document.querySelectorAll(".k-panel"));
+  function show(t){tabs.forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.t===t))});pan.forEach(function(p){p.hidden=p.dataset.p!==t})}
+  tabs.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.t)})});
+  var ua=navigator.userAgent||"";
+  if(/iPhone|iPad|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1))show("ios");
+  else if(/SamsungBrowser/.test(ua))show("samsung");
+  if("serviceWorker" in navigator&&location.protocol==="https:")navigator.serviceWorker.register("/sw.js").catch(function(){});
+})();
+</script>
+</body>
+</html>

@@ -388,13 +388,18 @@
       $("#akMetin").textContent = "iPhone'da uygulama Safari üzerinden ana ekrana eklenir:";
       return;
     }
-    window.addEventListener("beforeinstallprompt", function (e) {
-      e.preventDefault(); deferred = e; box.hidden = false;
-    });
+    // Kart her zaman görünür; tarayıcı otomatik kurulumu destekliyorsa buton doğrudan kurar,
+    // desteklemiyorsa adım adım anlatım açılır.
+    box.hidden = false;
+    window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; });
     $("#akBtn").addEventListener("click", function () {
-      if (!deferred) return;
-      deferred.prompt();
-      deferred.userChoice.then(function (r) { if (r.outcome === "accepted") box.hidden = true; deferred = null; });
+      if (deferred) {
+        deferred.prompt();
+        deferred.userChoice.then(function (r) { if (r.outcome === "accepted") box.hidden = true; deferred = null; });
+      } else {
+        $("#akAndroid").hidden = false; this.hidden = true;
+        $("#akMetin").textContent = "Uygulamayı tarayıcı menüsünden ekleyebilirsin:";
+      }
     });
     window.addEventListener("appinstalled", function () { box.hidden = true; });
   })();

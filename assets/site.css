@@ -326,6 +326,15 @@ table.cal tr.cur td{background:var(--amber-soft)}
   .mc-act{justify-content:center}
 }
 
+/* ---------- Uygulama kurulumu ---------- */
+.app-kur{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;margin-bottom:16px;border-color:var(--green)}
+.app-kur img{width:64px;height:64px;border-radius:16px}
+.app-kur h2{font-family:var(--body);font-size:18px;font-weight:700}
+.app-kur p{margin:4px 0 0}
+.ak-ios{margin:8px 0 0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+.ak-act{display:flex;gap:8px;flex-wrap:wrap}
+@media (max-width:700px){.app-kur{grid-template-columns:auto minmax(0,1fr)}.ak-act{grid-column:1/-1}}
+
 /* ---------- Ziyaretçi sayacı ---------- */
 .counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:8px}
 .cnt{background:var(--surface);padding:18px 22px;display:grid;gap:4px}

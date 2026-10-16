@@ -371,6 +371,34 @@
   $("#muhtarKartWa").href = waLink("Merhaba Muhtarım, "); $("#muhtarKartNo").textContent = M.whatsappGoster || "";
   $("#svcWa").href = waLink("Merhaba Muhtarım, ");
   $("#svcWaText").textContent = "WhatsApp üzerinden muhtarımız " + (M.muhtar || "") + "'a ulaşın.";
+  /* ---------- Uygulama (PWA): kurulum ve servis çalışanı ---------- */
+  (function () {
+    if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+      navigator.serviceWorker.register("/sw.js").catch(function () {});
+    }
+    var box = $("#appKur"); if (!box) return;
+    var standalone = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone;
+    if (standalone || store.get("appKurKapali")) return;
+    var ua = navigator.userAgent || "";
+    var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var deferred = null;
+    $("#akKapat").addEventListener("click", function () { box.hidden = true; store.set("appKurKapali", "1"); });
+    if (ios) {
+      box.hidden = false; $("#akBtn").hidden = true; $("#akIos").hidden = false;
+      $("#akMetin").textContent = "iPhone'da uygulama Safari üzerinden ana ekrana eklenir:";
+      return;
+    }
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault(); deferred = e; box.hidden = false;
+    });
+    $("#akBtn").addEventListener("click", function () {
+      if (!deferred) return;
+      deferred.prompt();
+      deferred.userChoice.then(function (r) { if (r.outcome === "accepted") box.hidden = true; deferred = null; });
+    });
+    window.addEventListener("appinstalled", function () { box.hidden = true; });
+  })();
+
   /* ---------- Teknik destek ---------- */
   (function () {
     var T = D.teknik; if (!T) return;

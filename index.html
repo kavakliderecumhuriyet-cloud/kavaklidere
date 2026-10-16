@@ -17,7 +17,11 @@
 <meta property="og:url" content="https://kavakliderem.com/">
 <meta property="og:image" content="https://kavakliderem.com/assets/icon-512.png">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kavaklıdere">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -187,6 +191,23 @@
         <a class="card svc" href="#hizmetler"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><h3>Önemli telefonlar</h3><p>Acil çağrı, arıza hatları, okul ve sağlık hizmetleri.</p></a>
         <a class="card svc" id="svcWa" href="#" target="_blank" rel="noopener"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20z"/></svg></span><h3>Muhtara yazın</h3><p id="svcWaText">WhatsApp üzerinden doğrudan muhtarımıza ulaşın.</p></a>
         <a class="card svc" id="svcTeknik" href="#" target="_blank" rel="noopener"><span class="ic" style="background:#E3F3EA;color:#1F8F4E"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm-3 5.5c-.2 0-.5.1-.7.3-.5.5-.8 1.1-.8 1.8 0 1.6 1.2 3.2 3 4.6 1.4 1 2.7 1.5 3.6 1.5.8 0 1.5-.4 1.9-1l.2-.6c0-.2-.1-.3-.3-.4l-1.6-.8c-.2-.1-.4 0-.5.1l-.6.8c-.1.1-.3.2-.5.1a5.6 5.6 0 0 1-2.6-2.4c-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.4 0-.5l-.7-1.6c-.1-.3-.3-.4-.5-.4z"/></svg></span><h3 id="svcTeknikAd">Teknik destek</h3><p>Site ile ilgili teknik sorular için WhatsApp'tan yazın.</p></a>
+      </div>
+    </section>
+
+    <section class="card app-kur" id="appKur" aria-labelledby="h-app" hidden>
+      <img src="assets/icon-192.png" width="64" height="64" alt="">
+      <div class="ak-bd">
+        <h2 id="h-app">Kavaklıdere uygulamasını telefonuna kur</h2>
+        <p class="muted" id="akMetin">Duyurulara tek dokunuşla ulaş. Uygulama ana ekranına eklenir, mağaza gerekmez.</p>
+        <ol class="ak-ios" id="akIos" hidden>
+          <li>Safari'de alttaki <b>Paylaş</b> simgesine dokun <span aria-hidden="true">(□↑)</span></li>
+          <li><b>Ana Ekrana Ekle</b>'yi seç</li>
+          <li>Sağ üstte <b>Ekle</b>'ye dokun</li>
+        </ol>
+      </div>
+      <div class="ak-act">
+        <button type="button" class="btn" id="akBtn">Uygulamayı kur</button>
+        <button type="button" class="btn ghost" id="akKapat">Şimdi değil</button>
       </div>
     </section>
 

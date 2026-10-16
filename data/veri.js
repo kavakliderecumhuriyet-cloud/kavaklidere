@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-16T12:20:00+03:00",
+  guncelleme: "2026-10-16T20:25:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,11 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "arac-muayenesi-ekim", tur: "onemli", kat: "Muhtarlık", sabit: true,
+      baslik: "Araç muayenesi köyümüzde",
+      metin: "Bu ayın sonunda araç muayenesi köyümüzde yapılacaktır. Tarih, saat ve yer bilgisi kesinleşince ayrıca duyurulacaktır. Bilgi için muhtarlığa başvurabilirsiniz.",
+      tarih: "2026-10-16", olay: "Ekim ayı sonu, Kavaklıdere", bitis: "2026-10-31", kaynak: "Muhtarlık" },
+
     { id: "meme-kanseri-taramasi", tur: "onemli", kat: "Sağlık", sabit: true,
       baslik: "Meme kanseri taraması için otobüs",
       metin: "Sağlık ocağımızdan duyurulur: Meme kanseri taraması yaptırmak isteyen kadınlar için otobüs kaldırılacaktır. Gitmek isteyenlerin sağlık ocağına giderek isim yazdırması gerekmektedir. Kişi sayısı sınırlıdır.",

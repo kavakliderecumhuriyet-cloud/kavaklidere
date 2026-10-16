@@ -368,6 +368,7 @@
   $("#muhtarAd").textContent = M.muhtar || ""; $("#fMuhtar").textContent = M.muhtar || "";
   $("#muhtarWa").textContent = M.whatsappGoster || ""; $("#muhtarWa").href = waLink("");
   $("#waFloat").href = waLink("Merhaba Muhtarım, ");
+  $("#muhtarKartWa").href = waLink("Merhaba Muhtarım, "); $("#muhtarKartNo").textContent = M.whatsappGoster || "";
   $("#svcWa").href = waLink("Merhaba Muhtarım, ");
   $("#svcWaText").textContent = "WhatsApp üzerinden muhtarımız " + (M.muhtar || "") + "'a ulaşın.";
   /* ---------- Teknik destek ---------- */

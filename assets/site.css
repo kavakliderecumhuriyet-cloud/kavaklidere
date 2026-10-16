@@ -304,6 +304,24 @@ table.cal tr.cur td{background:var(--amber-soft)}
 .soon h3{font-family:var(--body);font-size:16px;font-weight:700}
 .soon p{margin:6px 0 0;color:var(--muted);font-size:15px}
 
+/* ---------- Muhtar kartı ---------- */
+.muhtar-sec{padding-bottom:0}
+.muhtar-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;padding:0;overflow:hidden}
+.muhtar-card img{width:170px;height:100%;min-height:220px;object-fit:cover;object-position:center top;display:block;background:var(--surface-2)}
+.mc-bd{padding:22px 24px 22px 0;display:grid;gap:8px}
+.eyebrow-s{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.muhtar-card h2{font-size:clamp(24px,3vw,30px)}
+.muhtar-card p{margin:0;max-width:56ch}
+.mc-act{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:6px!important}
+.mini-muhtar{display:flex;align-items:center;gap:12px}
+.mini-muhtar img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--green-soft)}
+@media (max-width:560px){
+  .muhtar-card{grid-template-columns:1fr;text-align:center}
+  .muhtar-card img{width:140px;height:140px;min-height:0;border-radius:50%;margin:22px auto 0;object-position:center 10%;border:3px solid var(--green-soft)}
+  .mc-bd{padding:0 20px 22px;justify-items:center}
+  .mc-act{justify-content:center}
+}
+
 /* ---------- Ziyaretçi sayacı ---------- */
 .counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:8px}
 .cnt{background:var(--surface);padding:18px 22px;display:grid;gap:4px}

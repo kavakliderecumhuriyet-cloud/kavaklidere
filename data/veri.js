@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-17T01:25:00+03:00",
+  guncelleme: "2026-10-17T19:18:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,11 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "elektrik-kesintisi-17ekim", tur: "acil", kat: "Altyapı",
+      baslik: "Kısmi elektrik kesintisi",
+      metin: "Mahallemiz genelinde bazı yerlerde elektrik var, bazı yerlerde yok şeklinde kısmi enerji kesintisi vardır. Arıza kaynaklı olup GDZ Elektrik ekiplerine bildirildi. Bilginize.",
+      tarih: "2026-10-17", olay: "17 Ekim 2026 · Arıza bildirimi: 186", bitis: "2026-10-18", kaynak: "Muhtar Salih Taşlıyol" },
+
     { id: "meme-kanseri-taramasi", tur: "onemli", kat: "Sağlık", sabit: true,
       baslik: "Meme kanseri taraması için otobüs",
       metin: "Sağlık ocağımızdan duyurulur: Meme kanseri taraması yaptırmak isteyen kadınlar için otobüs kaldırılacaktır. Gitmek isteyenlerin sağlık ocağına giderek isim yazdırması gerekmektedir. Kişi sayısı sınırlıdır.",

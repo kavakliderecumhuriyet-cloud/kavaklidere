@@ -57,7 +57,7 @@
     bilgi: '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v6M12 7.5h.01"/>'
   };
   function newsCard(a) {
-    var ph = a.foto ? '<img src="' + esc(a.foto) + '" alt="" loading="lazy">' : '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[a.tur] + "</svg>";
+    var ph = a.foto ? '<img src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '" loading="lazy">' : '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[a.tur] + "</svg>";
     return '<a class="news-card' + (a.sabit ? " pinned" : "") + '" href="#d-' + esc(a.id) + '">' +
       '<div class="ph ' + a.tur + (a.foto ? " has-img" : "") + '">' + ph + "</div>" +
       '<div class="bd"><div class="tags">' + tags(a) + '<span class="tag t-sabit">' + esc(a.kat || "") + "</span></div>" +
@@ -123,7 +123,7 @@
   var dlg = $("#detay"), lastRoute = null;
   function openDetail(id) {
     var a = byId[id]; if (!a) return;
-    $("#detayIcerik").innerHTML = '<div class="row">' + tags(a) + "</div>" +
+    $("#detayIcerik").innerHTML = (a.foto ? '<img class="d-foto" src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '">' : "") + '<div class="row">' + tags(a) + "</div>" +
       '<h2 id="detayBaslik">' + esc(a.baslik) + "</h2><p style=\"margin:0;font-size:17px\">" + esc(a.metin) + "</p>" +
       "<dl>" + (a.olay ? "<dt>Ne zaman</dt><dd>" + esc(a.olay) + "</dd>" : "") +
       "<dt>Yayın</dt><dd>" + fmtDate(a.tarih) + "</dd>" + (a.kaynak ? "<dt>Duyuran</dt><dd>" + esc(a.kaynak) + "</dd>" : "") +

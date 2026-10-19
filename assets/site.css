@@ -210,8 +210,9 @@ main{display:block}
 .news-card .ph.acil{background:var(--urgent-soft);color:var(--urgent)}
 .news-card .ph.onemli{background:var(--amber-soft);color:var(--amber)}
 .news-card .ph.bilgi{background:var(--green-soft);color:var(--green)}
-.news-card .ph.has-img{height:auto;aspect-ratio:16/9}
-.news-card .ph img{width:100%;height:100%;object-fit:cover}
+.news-card .ph.has-img{height:auto;aspect-ratio:16/10;display:block;overflow:hidden}
+.d-foto{width:100%;border-radius:10px;display:block}
+.news-card .ph img{object-position:center 20%;width:100%;height:100%;object-fit:cover}
 .news-card .bd{padding:16px 18px 18px;display:grid;gap:8px}
 .news-card .tags{display:flex;gap:6px;flex-wrap:wrap}
 .news-card h3{font-family:var(--body);font-size:18px;font-weight:700;line-height:1.3}

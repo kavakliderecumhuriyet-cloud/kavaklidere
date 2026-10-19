@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-17T19:18:00+03:00",
+  guncelleme: "2026-10-19T18:47:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "muhtarlar-gunu-2026", tur: "bilgi", kat: "Muhtarlık", sabit: true,
+      baslik: "19 Ekim Muhtarlar Günü kutlu olsun",
+      metin: "Muhtarlık, gönüllere dokunmak, dertlere ortak olmak ve her zaman halkının yanında olmaktır. Mahallemize hizmet etmenin gururuyla, tüm muhtarlarımızın 19 Ekim Muhtarlar Günü kutlu olsun.",
+      foto: "assets/duyuru-muhtarlar-gunu.jpg", fotoAlt: "Muhtar Salih Taşlıyol'un 19 Ekim Muhtarlar Günü kutlama görseli",
+      tarih: "2026-10-19", olay: "19 Ekim 2026", bitis: "2026-10-21", kaynak: "Muhtar Salih Taşlıyol" },
+
     { id: "elektrik-kesintisi-17ekim", tur: "acil", kat: "Altyapı",
       baslik: "Kısmi elektrik kesintisi",
       metin: "Mahallemiz genelinde bazı yerlerde elektrik var, bazı yerlerde yok şeklinde kısmi enerji kesintisi vardır. Arıza kaynaklı olup GDZ Elektrik ekiplerine bildirildi. Bilginize.",

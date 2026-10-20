@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-19T18:47:00+03:00",
+  guncelleme: "2026-10-20T16:38:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,11 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "kayip-kimlik-20ekim", tur: "onemli", kat: "Muhtarlık",
+      baslik: "Bulunan kimlik ve banka kartı",
+      metin: "Eyüp Ç. adına kimlik kartı ve banka kartı bulunmuştur. Kart sahibini tanıyan varsa muhtarlığa yönlendirebilir. Kartlar, kimlik kontrolüyle sahibine teslim edilecektir.",
+      tarih: "2026-10-20", olay: "Teslim: Mahalle Muhtarlığı", bitis: "2026-10-27", kaynak: "Muhtar Salih Taşlıyol" },
+
     { id: "muhtarlar-gunu-2026", tur: "bilgi", kat: "Muhtarlık", sabit: true,
       baslik: "19 Ekim Muhtarlar Günü kutlu olsun",
       metin: "Muhtarlık, gönüllere dokunmak, dertlere ortak olmak ve her zaman halkının yanında olmaktır. Mahallemize hizmet etmenin gururuyla, tüm muhtarlarımızın 19 Ekim Muhtarlar Günü kutlu olsun.",

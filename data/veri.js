@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-26T10:56:00+03:00",
+  guncelleme: "2026-10-28T12:41:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,13 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "cumhuriyet-bayrami-program-2026", tur: "onemli", kat: "Etkinlik", sabit: true,
+      baslik: "29 Ekim Cumhuriyet Bayramı kutlama programı",
+      metin: "Cumhuriyetimizin 103. yılını coşkuyla kutluyoruz. 09.30: Kavaklıdere İlkokulu / Şehit Murat Kartal Ortaokulu önünden Belediye Meydanı'na bando eşliğinde yürüyüş. 10.00: Kavaklıdere Atatürk İlk/Ortaokulu bahçesinde resmi tören. 19.00: Kavaklıdere İlkokulu / Şehit Murat Kartal Ortaokulu önünden hareketli fener alayı ve Kavaklıdere Belediye Binası önünde tören. Tüm mahalle halkımız davetlidir.",
+      foto: "assets/duyuru-29-ekim-program.jpg", fotoAlt: "29 Ekim Cumhuriyet Bayramı kutlama programı afişi",
+      tarih: "2026-10-28", olay: "29 Ekim 2026 · 09.30, 10.00 ve 19.00", bitis: "2026-10-30",
+      kaynak: "Kavaklıdere Çok Programlı Anadolu Lisesi ve Kavaklıdere Atatürk İlk/Ortaokulu müdürlükleri" },
+
     { id: "cumhuriyet-bayrami-2026", tur: "bilgi", kat: "Muhtarlık", sabit: true,
       baslik: "Cumhuriyetimizin 103. yılı kutlu olsun",
       metin: "Cumhuriyetimizin kurucusu Gazi Mustafa Kemal Atatürk'ü ve bu vatan için mücadele eden tüm kahramanlarımızı saygı, minnet ve rahmetle anıyoruz. 29 Ekim Cumhuriyet Bayramımız kutlu olsun!",

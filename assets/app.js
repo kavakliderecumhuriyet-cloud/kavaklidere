@@ -58,6 +58,7 @@
   };
   function newsCard(a) {
     var ph = a.foto ? '<img src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '" loading="lazy">' : '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[a.tur] + "</svg>";
+    if (a.video) ph += '<span class="vplay" aria-hidden="true"></span>';
     return '<a class="news-card' + (a.sabit ? " pinned" : "") + '" href="#d-' + esc(a.id) + '">' +
       '<div class="ph ' + a.tur + (a.foto ? " has-img" : "") + '">' + ph + "</div>" +
       '<div class="bd"><div class="tags">' + tags(a) + '<span class="tag t-sabit">' + esc(a.kat || "") + "</span></div>" +
@@ -123,7 +124,8 @@
   var dlg = $("#detay"), lastRoute = null;
   function openDetail(id) {
     var a = byId[id]; if (!a) return;
-    $("#detayIcerik").innerHTML = (a.foto ? '<img class="d-foto" src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '">' : "") + '<div class="row">' + tags(a) + "</div>" +
+    $("#detayIcerik").innerHTML = (a.video ? '<video class="d-foto d-video" src="' + esc(a.video) + '" poster="' + esc(a.foto || "") + '" controls playsinline preload="metadata"></video>'
+      : a.foto ? '<img class="d-foto" src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '">' : "") + '<div class="row">' + tags(a) + "</div>" +
       '<h2 id="detayBaslik">' + esc(a.baslik) + "</h2><p style=\"margin:0;font-size:17px\">" + esc(a.metin) + "</p>" +
       "<dl>" + (a.olay ? "<dt>Ne zaman</dt><dd>" + esc(a.olay) + "</dd>" : "") +
       "<dt>Yayın</dt><dd>" + fmtDate(a.tarih) + "</dd>" + (a.kaynak ? "<dt>Duyuran</dt><dd>" + esc(a.kaynak) + "</dd>" : "") +
@@ -139,10 +141,10 @@
     });
     if (typeof dlg.showModal === "function") { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
   }
-  function closeDetail() { if (dlg.open) dlg.close(); }
+  function closeDetail() { var v = $("#detay video"); if (v) v.pause(); if (dlg.open) dlg.close(); }
   $("#detayKapat").addEventListener("click", closeDetail);
   dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDetail(); });
-  dlg.addEventListener("close", function () { if (/^#d-/.test(location.hash)) { try { history.replaceState(null, "", lastRoute ? "#" + lastRoute : location.pathname); } catch (e) {} } });
+  dlg.addEventListener("close", function () { var v = $("#detay video"); if (v) v.pause(); if (/^#d-/.test(location.hash)) { try { history.replaceState(null, "", lastRoute ? "#" + lastRoute : location.pathname); } catch (e) {} } });
 
   /* ---------- Şimdi yayında (döngü) ---------- */
   (function () {

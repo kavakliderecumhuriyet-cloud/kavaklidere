@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-29T19:32:00+03:00",
+  guncelleme: "2026-10-29T21:54:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "cumhuriyet-bayrami-video-2026", tur: "bilgi", kat: "Etkinlik",
+      baslik: "29 Ekim Cumhuriyet Bayramı kutlu olsun (video)",
+      metin: "Cumhuriyetimizin 103. yılında tüm Kavaklıdere halkının Cumhuriyet Bayramı'nı kutlarız. Videoyu izlemek için dokunun.",
+      video: "assets/duyuru-29-ekim-video.mp4", foto: "assets/duyuru-29-ekim-video.jpg", fotoAlt: "29 Ekim Cumhuriyet Bayramı kutlama videosundan bir kare",
+      tarih: "2026-10-29", olay: "29 Ekim 2026", bitis: "2026-10-31", kaynak: "Muhtarlık" },
+
     { id: "kayip-kopek-29ekim", tur: "onemli", kat: "Kayıp",
       baslik: "Kayıp Pinscher köpek aranıyor",
       metin: "Siyah-kahverengi renkli Pinscher cinsi köpeğimiz kaybolmuştur. Görenlerin veya bilgisi olanların 0537 207 18 47 numaralı telefondan sahibine ya da muhtarlığa haber vermesi rica olunur.",

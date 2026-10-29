@@ -212,6 +212,10 @@ main{display:block}
 .news-card .ph.bilgi{background:var(--green-soft);color:var(--green)}
 .news-card .ph.has-img{height:auto;aspect-ratio:16/10;display:block;overflow:hidden}
 .d-foto{width:100%;border-radius:10px;display:block}
+.d-video{max-height:70vh;background:#000;object-fit:contain}
+.news-card .ph{position:relative}
+.vplay{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center}
+.vplay::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
 .news-card .ph img{object-position:center 20%;width:100%;height:100%;object-fit:cover}
 .news-card .bd{padding:16px 18px 18px;display:grid;gap:8px}
 .news-card .tags{display:flex;gap:6px;flex-wrap:wrap}

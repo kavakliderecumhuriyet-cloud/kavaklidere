@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-28T12:41:00+03:00",
+  guncelleme: "2026-10-29T19:32:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "kayip-kopek-29ekim", tur: "onemli", kat: "Kayıp",
+      baslik: "Kayıp Pinscher köpek aranıyor",
+      metin: "Siyah-kahverengi renkli Pinscher cinsi köpeğimiz kaybolmuştur. Görenlerin veya bilgisi olanların 0537 207 18 47 numaralı telefondan sahibine ya da muhtarlığa haber vermesi rica olunur.",
+      foto: "assets/duyuru-kayip-kopek.jpg", fotoAlt: "Kayıp siyah-kahverengi Pinscher köpek",
+      tarih: "2026-10-29", olay: "İletişim: 0537 207 18 47", bitis: "2026-11-12", kaynak: "Muhtar Salih Taşlıyol" },
+
     { id: "cumhuriyet-bayrami-program-2026", tur: "onemli", kat: "Etkinlik", sabit: true,
       baslik: "29 Ekim Cumhuriyet Bayramı kutlama programı",
       metin: "Cumhuriyetimizin 103. yılını coşkuyla kutluyoruz. 09.30: Kavaklıdere İlkokulu / Şehit Murat Kartal Ortaokulu önünden Belediye Meydanı'na bando eşliğinde yürüyüş. 10.00: Kavaklıdere Atatürk İlk/Ortaokulu bahçesinde resmi tören. 19.00: Kavaklıdere İlkokulu / Şehit Murat Kartal Ortaokulu önünden hareketli fener alayı ve Kavaklıdere Belediye Binası önünde tören. Tüm mahalle halkımız davetlidir.",

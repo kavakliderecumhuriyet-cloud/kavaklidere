@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-29T21:54:00+03:00",
+  guncelleme: "2026-10-31T16:22:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,11 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "altin-ayaklar-futbol-kursu", tur: "bilgi", kat: "Spor",
+      baslik: "Altın Ayaklar futbol kursu başladı",
+      metin: "Mahallemizde Altın Ayaklar futbol kursu başlamıştır. Kayıt ve bilgi için 0554 873 94 07 numaralı telefondan irtibata geçebilirsiniz.",
+      tarih: "2026-10-31", olay: "İrtibat: 0554 873 94 07", bitis: "2026-11-30", kaynak: "Muhtarlık" },
+
     { id: "cumhuriyet-bayrami-video-2026", tur: "bilgi", kat: "Etkinlik",
       baslik: "29 Ekim Cumhuriyet Bayramı kutlu olsun (video)",
       metin: "Cumhuriyetimizin 103. yılında tüm Kavaklıdere halkının Cumhuriyet Bayramı'nı kutlarız. Videoyu izlemek için dokunun.",

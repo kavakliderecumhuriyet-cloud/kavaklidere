@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-10-31T16:22:00+03:00",
+  guncelleme: "2026-10-31T17:18:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,13 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "cennet-elmasi-festivali-2026", tur: "onemli", kat: "Etkinlik", sabit: true,
+      baslik: "Kavaklıdere 2. Cennet Elması Festivali",
+      metin: "Kavaklıdere 2. Cennet Elması Festivali, Kavaklıdere Meydanı'nda yapılacaktır. 6 Kasım Cuma 20.00: Halit Yıldız ve Deniz Yıldız. 7 Kasım Cumartesi 20.00: Aslı Güngör. 8 Kasım Pazar 20.00: Reyhan Karaca. Her gün 18.00'den itibaren Zabıta Müdürlüğü önünden araçlar kaldırılacaktır. Tüm halkımız davetlidir.",
+      foto: "assets/duyuru-cennet-elmasi-festivali.jpg", fotoAlt: "Kavaklıdere 2. Cennet Elması Festivali afişi, 6–8 Kasım konser programı",
+      tarih: "2026-10-31", olay: "6–8 Kasım 2026, her gün 20.00 · Kavaklıdere Meydanı", bitis: "2026-11-09",
+      kaynak: "Alaşehir Belediyesi ve Manisa Büyükşehir Belediyesi" },
+
     { id: "altin-ayaklar-futbol-kursu", tur: "bilgi", kat: "Spor",
       baslik: "Altın Ayaklar futbol kursu başladı",
       metin: "Mahallemizde Altın Ayaklar futbol kursu başlamıştır. Kayıt ve bilgi için 0554 873 94 07 numaralı telefondan irtibata geçebilirsiniz.",

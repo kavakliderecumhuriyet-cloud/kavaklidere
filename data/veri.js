@@ -12,7 +12,7 @@
    - Evraklara ASLA isim, TC no, telefon gibi kişisel veri yazmayın.
    ===================================================================== */
 window.SITE_DATA = {
-  guncelleme: "2026-11-01T11:20:00+03:00",
+  guncelleme: "2026-11-01T16:31:00+03:00",
 
   mahalle: {
     ad: "Kavaklıdere Cumhuriyet Mahallesi",
@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "kavaklderespor-futbol-okulu", tur: "onemli", kat: "Spor",
+      baslik: "Kavaklıderespor Futbol Okulu kayıtları başladı",
+      metin: "Kavaklıdere'de futbol heyecanı başlıyor! Kavaklıderespor Futbol Okulu, çocuklarımızın fiziksel, zihinsel ve sosyal gelişimine katkı sağlamak ve spor disiplini kazandırmak için yola çıkıyor. 7–14 yaş arası çocuklar için özel antrenman programları, UEFA C lisanslı antrenör eşliğinde eğitim ve haftanın belirli günlerinde düzenli antrenmanlar. Başvuru ve bilgi için: Oktay Aysal, 0546 543 24 77. Tüm Kavaklıdere çocukları davetlidir.",
+      foto: "assets/duyuru-kavaklderespor-futbol-okulu.jpg", fotoAlt: "Kavaklıderespor Futbol Okulu afişi, 7–14 yaş, başvuru Oktay Aysal 0546 543 24 77",
+      tarih: "2026-11-01", olay: "7–14 yaş · Başvuru: 0546 543 24 77 (Oktay Aysal)", bitis: "2026-12-15", kaynak: "Kavaklıderespor" },
+
     { id: "5g-imza-kampanyasi", tur: "onemli", kat: "Muhtarlık", sabit: true,
       baslik: "Kavaklıdere için 5G istiyoruz!",
       metin: "Değerli Kavaklıdereli hemşehrilerimiz, mahallemizde Turkcell 4.5G hizmeti iyi çalışmasına rağmen henüz 5G hizmeti bulunmamaktadır. Kavaklıdere'nin de yeni nesil mobil iletişim teknolojilerinden yararlanabilmesi için Turkcell'den mevcut baz istasyonlarının 5G'ye yükseltilmesini ve mahallemizin yatırım planına alınmasını talep ediyoruz. Bu amaçla mahalle sakinlerimizin desteğiyle imza toplamak istiyoruz. Hedefimiz mümkün olduğunca çok imza toplamak! İmza kampanyasına katılmak veya destek vermek isteyen hemşehrilerimiz mahalle muhtarlığıyla iletişime geçebilir. İmza toplama yeri ve saatleri netleştiğinde ayrıca duyurulacaktır. Gelin, Kavaklıdere'nin teknolojik gelişmelerden geri kalmaması için birlikte hareket edelim.",

@@ -36,11 +36,6 @@ window.SITE_DATA = {
       foto: "assets/duyuru-kavaklderespor-futbol-okulu.jpg", fotoAlt: "Kavaklıderespor Futbol Okulu afişi, 7–14 yaş, başvuru Oktay Aysal 0546 543 24 77",
       tarih: "2026-11-01", olay: "7–14 yaş · Başvuru: 0546 543 24 77 (Oktay Aysal)", bitis: "2026-12-15", kaynak: "Kavaklıderespor" },
 
-    { id: "5g-imza-kampanyasi", tur: "onemli", kat: "Muhtarlık", sabit: true,
-      baslik: "Kavaklıdere için 5G istiyoruz!",
-      metin: "Değerli Kavaklıdereli hemşehrilerimiz, mahallemizde Turkcell 4.5G hizmeti iyi çalışmasına rağmen henüz 5G hizmeti bulunmamaktadır. Kavaklıdere'nin de yeni nesil mobil iletişim teknolojilerinden yararlanabilmesi için Turkcell'den mevcut baz istasyonlarının 5G'ye yükseltilmesini ve mahallemizin yatırım planına alınmasını talep ediyoruz. Bu amaçla mahalle sakinlerimizin desteğiyle imza toplamak istiyoruz. Hedefimiz mümkün olduğunca çok imza toplamak! İmza kampanyasına katılmak veya destek vermek isteyen hemşehrilerimiz mahalle muhtarlığıyla iletişime geçebilir. İmza toplama yeri ve saatleri netleştiğinde ayrıca duyurulacaktır. Gelin, Kavaklıdere'nin teknolojik gelişmelerden geri kalmaması için birlikte hareket edelim.",
-      tarih: "2026-11-01", olay: "İmza kampanyası · Yer ve saat ayrıca duyurulacak", kaynak: "Mahalle Muhtarlığı" },
-
     { id: "cennet-elmasi-festivali-2026", tur: "onemli", kat: "Etkinlik", sabit: true,
       baslik: "Kavaklıdere 2. Cennet Elması Festivali",
       metin: "Kavaklıdere 2. Cennet Elması Festivali, Kavaklıdere Meydanı'nda yapılacaktır. 6 Kasım Cuma 20.00: Halit Yıldız ve Deniz Yıldız. 7 Kasım Cumartesi 20.00: Aslı Güngör. 8 Kasım Pazar 20.00: Reyhan Karaca. Her gün 18.00'den itibaren Zabıta Müdürlüğü önünden araçlar kaldırılacaktır. Tüm halkımız davetlidir.",

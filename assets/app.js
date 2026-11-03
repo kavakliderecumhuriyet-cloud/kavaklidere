@@ -59,7 +59,7 @@
   function newsCard(a) {
     var ph = a.foto ? '<img src="' + esc(a.foto) + '" alt="' + esc(a.fotoAlt || "") + '" loading="lazy">' : '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[a.tur] + "</svg>";
     if (a.video) ph += '<span class="vplay" aria-hidden="true"></span>';
-    return '<a class="news-card' + (a.sabit ? " pinned" : "") + '" href="#d-' + esc(a.id) + '">' +
+    return '<a class="news-card' + (a.sabit ? " pinned" : "") + '" href="' + (a.link ? esc(a.link) : "#d-" + esc(a.id)) + '">' +
       '<div class="ph ' + a.tur + (a.foto ? " has-img" : "") + '">' + ph + "</div>" +
       '<div class="bd"><div class="tags">' + tags(a) + '<span class="tag t-sabit">' + esc(a.kat || "") + "</span></div>" +
       "<h3>" + esc(a.baslik) + "</h3><p>" + esc(a.metin) + "</p>" +
@@ -84,7 +84,8 @@
     var el = $("#oneCikan");
     if (!f) { el.hidden = true; return; }
     el.innerHTML = '<div class="lbl">Öne çıkan ' + tags(f) + "</div><h2>" + esc(f.baslik) + "</h2><p>" + esc(f.metin) + "</p>" +
-      (f.olay ? '<p><b>' + esc(f.olay) + "</b></p>" : "") + '<a class="more" href="#d-' + esc(f.id) + '">Ayrıntılar →</a>';
+      (f.olay ? '<p><b>' + esc(f.olay) + "</b></p>" : "") +
+      (f.link ? '<a class="btn" style="margin-top:4px" href="' + esc(f.link) + '">' + esc(f.linkYazi || "Ayrıntılar →") + "</a>" : '<a class="more" href="#d-' + esc(f.id) + '">Ayrıntılar →</a>');
   })();
 
   /* Ana sayfa haber kartları */

@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "fiber-internet-talebi", tur: "onemli", kat: "Muhtarlık", sabit: true,
+      baslik: "Fiber internet talebinizi kaydedin",
+      metin: "Kavaklıdere'ye Türk Telekom fiber internet altyapısı gelmesi için hangi sokaklarda ihtiyaç olduğunu belirliyoruz. Sokağınızı, bina ve daire numaranızı seçip fiber abonesi olmak isteyip istemediğinizi işaretlemeniz yeterli. Ad, telefon veya kimlik bilgisi istenmez; bir dakikadan kısa sürer. Talepler sokak bazında toplanıp ilgili kurumlara iletilecektir.",
+      link: "/fiber.html", linkYazi: "Fiber Talebimi Kaydet →",
+      tarih: "2026-11-03", olay: "Ad ve telefon istenmez · 1 dakikadan kısa sürer", kaynak: "Mahalle Muhtarlığı" },
+
     { id: "kavaklderespor-futbol-okulu", tur: "onemli", kat: "Spor",
       baslik: "Kavaklıderespor Futbol Okulu kayıtları başladı",
       metin: "Kavaklıdere'de futbol heyecanı başlıyor! Kavaklıderespor Futbol Okulu, çocuklarımızın fiziksel, zihinsel ve sosyal gelişimine katkı sağlamak ve spor disiplini kazandırmak için yola çıkıyor. 7–14 yaş arası çocuklar için özel antrenman programları, UEFA C lisanslı antrenör eşliğinde eğitim ve haftanın belirli günlerinde düzenli antrenmanlar. Başvuru ve bilgi için: Oktay Aysal, 0546 543 24 77. Tüm Kavaklıdere çocukları davetlidir.",

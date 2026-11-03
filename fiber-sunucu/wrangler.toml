@@ -13,4 +13,4 @@ GIZLEME_ESIGI = "5"
 [[d1_databases]]
 binding = "DB"
 database_name = "kavaklidere-fiber"
-database_id = "BURAYA-D1-VERITABANI-KIMLIGI"
+database_id = "99cd8ca7-7dff-4c1b-9786-36f14fcfc584"

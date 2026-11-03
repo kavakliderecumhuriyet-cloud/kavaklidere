@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fiber İnternet Talebi – Kavaklıdere Cumhuriyet Mahallesi</title>
+<meta name="description" content="Kavaklıdere Mahallesi (Alaşehir, Manisa) Türk Telekom fiber internet altyapısı için talep formu ve sokak bazında sonuçlar.">
+<link rel="canonical" href="https://kavakliderem.com/fiber.html">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2E6B3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem("tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+  .f-head{padding-block:28px 6px}
+  .f-head h1{font-size:clamp(28px,4.5vw,40px)}
+  .f-lead{max-width:62ch;display:grid;gap:10px;margin-top:12px;color:var(--muted)}
+  .f-lead p{margin:0}
+  .f-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;align-items:start;margin-top:22px}
+  @media (max-width:860px){.f-grid{grid-template-columns:1fr}}
+  form.card{display:grid;gap:18px}
+  .fld{display:grid;gap:6px}
+  .fld>label,.fld>.lbl{font-weight:700}
+  .fld small{color:var(--muted)}
+  .fld input[type=text]{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+  .fld input[type=text]:focus{outline:3px solid var(--amber);outline-offset:1px}
+  .combo{position:relative}
+  .lb{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:5;max-height:260px;overflow:auto;margin:0;padding:6px 0;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+  .lb li{padding:10px 14px;cursor:pointer}
+  .lb li[aria-selected="true"],.lb li:hover{background:var(--green-soft)}
+  .lb .yok{color:var(--muted);cursor:default}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  @media (max-width:420px){.row2{grid-template-columns:1fr}}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+  .chk input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--green)}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;background:var(--bg)}
+  .opt input{width:20px;height:20px;accent-color:var(--green);flex:none}
+  .opt:has(input:checked){border-color:var(--green);background:var(--green-soft)}
+  .wa-link{display:inline-flex;gap:6px;align-items:center;font-weight:700;color:var(--green);text-decoration:none;font-size:15px}
+  .note{font-size:14px;color:var(--muted)}
+  .msg{border-radius:10px;padding:14px 16px;font-weight:600}
+  .msg.ok{background:var(--green-soft);color:var(--green-strong)}
+  .msg.err{background:var(--urgent-soft);color:var(--urgent)}
+  .msg.wait{background:var(--amber-soft);color:var(--ink)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .st-k{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .st-k div{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+  .st-k span{display:block;font-size:13px;color:var(--muted)}
+  .st-k b{font-family:var(--display);font-size:28px;font-variant-numeric:tabular-nums}
+  .st-k .big{grid-column:1/-1;background:var(--green-soft)}
+  .st-k .big b{color:var(--green-strong);font-size:36px}
+  .bars{display:grid;gap:10px;margin-top:16px}
+  .bar-r{display:grid;gap:4px}
+  .bar-r .t{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+  .bar-r .t b{font-variant-numeric:tabular-nums}
+  .track{height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden;display:flex}
+  .track i{display:block;height:100%}
+  .track .e{background:var(--green)}.track .k{background:var(--amber)}
+  .legend{display:flex;gap:14px;font-size:13px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  button[disabled]{opacity:.55;cursor:not-allowed}
+</style>
+</head>
+<body>
+<a class="skip" href="#form">Forma geç</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="assets/icon-192.png" width="40" height="40" alt="" style="border-radius:50%"><span><strong>Kavaklıdere</strong><small>Cumhuriyet Mahallesi · Alaşehir</small></span></a>
+  <a class="btn ghost" href="/">← Ana sayfa</a>
+</div></header>
+
+<main class="wrap" id="icerik">
+  <div class="f-head">
+    <h1>Kavaklıdere Mahallesi Fiber İnternet Talebi</h1>
+    <div class="f-lead">
+      <p>Değerli mahalle sakinlerimiz,</p>
+      <p>Kavaklıdere Mahallemize Türk Telekom fiber internet altyapısı kazandırılması amacıyla talep topluyoruz.</p>
+      <p>Fiber altyapısı hazır olduğunda abonelik almak isteyen komşularımızın aşağıdaki kısa formu doldurmalarını rica ediyoruz.</p>
+      <p>Her daire veya müstakil konut için ayrı başvuru yapılabilir. Toplanan talepler, mahallemizin fiber internet ihtiyacını sokak bazında ortaya koymak amacıyla değerlendirilecektir.</p>
+    </div>
+  </div>
+
+  <div class="f-grid">
+    <form class="card" id="form" novalidate>
+      <div class="msg wait" id="kapali" hidden>Başvurular yakında açılacaktır. Form şu an önizleme amaçlıdır; bilgileriniz kaydedilmez.</div>
+
+      <div class="fld">
+        <label for="sokak" id="sokakLbl">Sokak / Cadde</label>
+        <div class="combo">
+          <input type="text" id="sokak" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sokakList" autocomplete="off" placeholder="Yazmaya başlayın, ör. Atatürk" required>
+          <ul class="lb" id="sokakList" role="listbox" aria-labelledby="sokakLbl" hidden></ul>
+        </div>
+        <a class="wa-link" id="sokakYok" href="#" target="_blank" rel="noopener" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm-3 5.5c-.2 0-.5.1-.7.3-.5.5-.8 1.1-.8 1.8 0 1.6 1.2 3.2 3 4.6 1.4 1 2.7 1.5 3.6 1.5.8 0 1.5-.4 1.9-1l.2-.6c0-.2-.1-.3-.3-.4l-1.6-.8c-.2-.1-.4 0-.5.1l-.6.8c-.1.1-.3.2-.5.1a5.6 5.6 0 0 1-2.6-2.4c-.1-.2 0-.3.1-.4l.5-.6c.1-.2.1-.4 0-.5l-.7-1.6c-.1-.3-.3-.4-.5-.4z"/></svg>
+          Sokağımı bulamadım – Sokak ekle
+        </a>
+        <small id="sokakYokNot" hidden>Sokağınız listede yoksa muhtarlığa bildirin; kontrol edildikten sonra listeye eklenir.</small>
+      </div>
+
+      <div class="row2">
+        <div class="fld">
+          <label for="bina">Bina / Dış kapı no</label>
+          <input type="text" id="bina" inputmode="text" maxlength="10" placeholder="ör. 12 veya 5A" required>
+        </div>
+        <div class="fld">
+          <label for="daire">Daire / İç kapı no</label>
+          <input type="text" id="daire" maxlength="10" placeholder="ör. 3">
+          <label class="chk"><input type="checkbox" id="mustakil"> Müstakil ev</label>
+        </div>
+      </div>
+
+      <fieldset class="fld" style="border:0;padding:0;margin:0">
+        <legend class="lbl" style="padding:0;margin-bottom:6px">Fiber altyapısı hazır olduğunda abonelik almak ister misiniz?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="cevap" value="evet" required> Evet, fiber internet aboneliği almak istiyorum.</label>
+          <label class="opt"><input type="radio" name="cevap" value="kararsiz"> Henüz karar vermedim.</label>
+          <label class="opt"><input type="radio" name="cevap" value="hayir"> Hayır, istemiyorum.</label>
+        </div>
+      </fieldset>
+
+      <div class="hp" aria-hidden="true"><label for="web_sitesi">Bu alanı boş bırakın</label><input type="text" id="web_sitesi" tabindex="-1" autocomplete="off"></div>
+
+      <label class="chk"><input type="checkbox" id="kvkk"> <span><a href="/fiber-kvkk.html" target="_blank" rel="noopener">Kişisel verilerin işlenmesine ilişkin aydınlatma metnini</a> okudum.</span></label>
+
+      <p class="note" style="margin:0">Ad, telefon veya kimlik bilgisi istenmez. Bu form abonelik sözleşmesi veya kesin abonelik taahhüdü değildir. Aynı adresten tekrar gönderirseniz son cevabınız geçerli olur.</p>
+
+      <div id="sonuc" aria-live="polite"></div>
+      <button class="btn" type="submit" id="gonder" style="justify-self:start;padding:13px 22px;font-size:16px">Fiber Talebimi Kaydet</button>
+    </form>
+
+    <section class="card" aria-labelledby="h-sonuc">
+      <h2 id="h-sonuc" style="font-size:22px">Sokak bazında sonuçlar</h2>
+      <p class="note" style="margin:6px 0 14px">Anonim toplu sonuçlar. Bina ve daire numaraları gösterilmez; az talep gelen sokaklar “Diğer sokaklar” içinde birlikte sayılır.</p>
+      <div id="ist"><div class="empty">Sonuçlar, başvurular açıldıktan sonra burada görünecek.</div></div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap"><p class="fine" style="margin:0">Kavaklıdere Cumhuriyet Mahallesi · Alaşehir / Manisa · <a href="/fiber-kvkk.html">Aydınlatma metni</a></p></div></footer>
+
+<script src="data/fiber-ayar.js"></script>
+<script>
+(function () {
+  "use strict";
+  var A = window.FIBER_AYAR || {}, API = (A.api || "").replace(/\/+$/, "");
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var nf = new Intl.NumberFormat("tr-TR");
+  // Türkçe duyarlı arama: büyük/küçük harf ve I/İ/ı/i farkı gözetmeden, harf işaretleri korunarak
+  var norm = function (s) { return String(s).toLocaleLowerCase("tr-TR").replace(/\s+/g, " ").trim(); };
+  var gevsek = function (s) { return norm(s).replace(/ç/g, "c").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ş/g, "s").replace(/ü/g, "u"); };
+
+  var sokaklar = [], secili = null, acik = false;
+
+  /* ---- Sokak seçici ---- */
+  var inp = $("#sokak"), lb = $("#sokakList"), aktif = -1, gorunen = [];
+  function liste(q) {
+    var n = norm(q), g = gevsek(q);
+    gorunen = sokaklar.filter(function (s) { return !q || norm(s.ad).indexOf(n) >= 0 || gevsek(s.ad).indexOf(g) >= 0; });
+    aktif = gorunen.length ? 0 : -1;
+    lb.innerHTML = gorunen.length ? gorunen.map(function (s, i) {
+      return '<li role="option" id="sk' + i + '" aria-selected="' + (i === aktif) + '" data-i="' + i + '">' + esc(s.ad) + "</li>";
+    }).join("") : '<li class="yok" role="option" aria-disabled="true">Bu adla sokak bulunamadı</li>';
+    lb.hidden = false; inp.setAttribute("aria-expanded", "true");
+    inp.setAttribute("aria-activedescendant", aktif >= 0 ? "sk0" : "");
+  }
+  function kapat() { lb.hidden = true; inp.setAttribute("aria-expanded", "false"); }
+  function sec(i) { secili = gorunen[i]; inp.value = secili.ad; kapat(); }
+  inp.addEventListener("input", function () { secili = null; liste(inp.value); });
+  inp.addEventListener("focus", function () { liste(inp.value === (secili && secili.ad) ? "" : inp.value); });
+  inp.addEventListener("keydown", function (e) {
+    if (lb.hidden && (e.key === "ArrowDown")) { liste(inp.value); return; }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault(); if (!gorunen.length) return;
+      aktif = (aktif + (e.key === "ArrowDown" ? 1 : -1) + gorunen.length) % gorunen.length;
+      [].forEach.call(lb.children, function (li, i) { li.setAttribute("aria-selected", String(i === aktif)); });
+      var el = document.getElementById("sk" + aktif); if (el) { el.scrollIntoView({ block: "nearest" }); inp.setAttribute("aria-activedescendant", el.id); }
+    } else if (e.key === "Enter" && !lb.hidden && aktif >= 0) { e.preventDefault(); sec(aktif); $("#bina").focus(); }
+    else if (e.key === "Escape") kapat();
+  });
+  lb.addEventListener("mousedown", function (e) { var li = e.target.closest("li[data-i]"); if (li) { e.preventDefault(); sec(+li.dataset.i); } });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".combo")) { kapat(); if (!secili) { var m = sokaklar.filter(function (s) { return norm(s.ad) === norm(inp.value); })[0]; if (m) secili = m; } } });
+
+  /* ---- Müstakil ---- */
+  $("#mustakil").addEventListener("change", function () { var d = $("#daire"); d.disabled = this.checked; if (this.checked) d.value = ""; });
+
+  /* ---- WhatsApp: sokak ekle ---- */
+  if (A.whatsapp && /^90\d{10}$/.test(A.whatsapp)) {
+    var m = "Merhaba, Kavaklıdere Mahallesi fiber internet talep formunda sokağımı bulamadım. Listeye eklenmesini rica ediyorum.\n\nSokak / Cadde adı:\nVarsa yakınındaki bilinen sokak:";
+    var a = $("#sokakYok"); a.href = "https://wa.me/" + A.whatsapp + "?text=" + encodeURIComponent(m); a.hidden = false;
+  } else { $("#sokakYokNot").hidden = false; }
+
+  /* ---- Gönder ---- */
+  function mesaj(t, cls) { $("#sonuc").innerHTML = t ? '<div class="msg ' + cls + '">' + esc(t) + "</div>" : ""; }
+  $("#form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!acik) { mesaj("Başvurular henüz açılmadı. Açıldığında bu sayfadan duyurulacaktır.", "wait"); return; }
+    if (!secili) { mesaj("Lütfen sokağınızı listeden seçin.", "err"); inp.focus(); return; }
+    var bina = $("#bina").value.trim(), must = $("#mustakil").checked, daire = $("#daire").value.trim();
+    var cev = (document.querySelector("input[name=cevap]:checked") || {}).value;
+    if (!bina) { mesaj("Lütfen bina / dış kapı numarasını yazın.", "err"); $("#bina").focus(); return; }
+    if (!must && !daire) { mesaj("Lütfen daire numarasını yazın veya “Müstakil ev”i işaretleyin.", "err"); $("#daire").focus(); return; }
+    if (!cev) { mesaj("Lütfen abonelik tercihinizi seçin.", "err"); return; }
+    if (!$("#kvkk").checked) { mesaj("Lütfen aydınlatma metnini okuduğunuzu onaylayın.", "err"); return; }
+    var b = $("#gonder"); b.disabled = true; b.textContent = "Kaydediliyor…";
+    fetch(API + "/api/talep", { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ sokak_id: secili.id, bina: bina, daire: daire, mustakil: must, cevap: cev, kvkk: true, web_sitesi: $("#web_sitesi").value }) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (x) {
+        if (x.ok && x.j.tamam) {
+          mesaj("Teşekkür ederiz. Fiber internet talebiniz kaydedildi. Kavaklıdere Mahallemizin fiber altyapıya kavuşması için gösterdiğiniz ilgiye teşekkür ederiz." + (x.j.durum === "guncellendi" ? " (Bu adres için daha önce yapılan başvuru güncellendi.)" : ""), "ok");
+          $("#bina").value = ""; $("#daire").value = ""; $("#mustakil").checked = false; $("#daire").disabled = false;
+          [].forEach.call(document.querySelectorAll("input[name=cevap]"), function (r) { r.checked = false; });
+          istatistik();
+        } else mesaj(x.j.hata || "Kayıt yapılamadı. Lütfen tekrar deneyin.", "err");
+      })
+      .catch(function () { mesaj("Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edip tekrar deneyin.", "err"); })
+      .then(function () { b.disabled = !acik; b.textContent = "Fiber Talebimi Kaydet"; });
+  });
+
+  /* ---- İstatistik ---- */
+  function istatistik() {
+    if (!API) return;
+    fetch(API + "/api/istatistik").then(function (r) { return r.json(); }).then(function (d) {
+      var el = $("#ist");
+      if (!d.yeterli) { el.innerHTML = '<div class="empty">Henüz yeterli sayıda talep yok. Kişilerin gizliliğini korumak için sonuçlar en az ' + d.esik + " talep geldiğinde gösterilir.</div>"; return; }
+      var max = Math.max.apply(null, d.sokaklar.map(function (s) { return s.toplam; }).concat([d.diger ? d.diger.toplam : 0, 1]));
+      var bar = function (ad, e, k, t) {
+        return '<div class="bar-r"><div class="t"><span>' + esc(ad) + "</span><b>" + nf.format(t) + '</b></div><div class="track" role="img" aria-label="' + esc(ad) + ": " + e + " abonelik isteyen, " + k + ' kararsız"><i class="e" style="width:' + (e / max * 100) + '%"></i><i class="k" style="width:' + (k / max * 100) + '%"></i></div></div>';
+      };
+      el.innerHTML = '<div class="st-k"><div class="big"><span>Toplam fiber talebi</span><b>' + nf.format(d.toplam) + "</b></div>" +
+        "<div><span>Abonelik isteyen hane</span><b>" + nf.format(d.evet) + "</b></div><div><span>Kararsız hane</span><b>" + nf.format(d.kararsiz) + "</b></div>" +
+        "<div><span>Talep gelen sokak</span><b>" + nf.format(d.sokak) + "</b></div><div><span>Talep gelen bina</span><b>" + nf.format(d.bina) + "</b></div></div>" +
+        '<div class="bars">' + d.sokaklar.map(function (s) { return bar(s.ad, s.evet, s.kararsiz, s.toplam); }).join("") +
+        (d.diger ? bar("Diğer sokaklar (" + d.diger.sokak + " sokak)", d.diger.toplam, 0, d.diger.toplam) : "") + "</div>" +
+        '<div class="legend"><span><i style="background:var(--green)"></i>Abonelik isteyen</span><span><i style="background:var(--amber)"></i>Kararsız</span></div>' +
+        '<p class="note" style="margin:12px 0 0">Kayıtlar kimlik ve telefon doğrulaması içermez; kesin abonelik taahhüdü değildir.</p>';
+    }).catch(function () { $("#ist").innerHTML = '<div class="empty">Sonuçlar şu an yüklenemedi. Daha sonra tekrar deneyin.</div>'; });
+  }
+
+  /* ---- Başlat ---- */
+  function kapaliGoster() { acik = false; $("#kapali").hidden = false; $("#gonder").disabled = true; }
+  function yedek() { sokaklar = (A.yedekSokaklar || []).map(function (ad, i) { return { id: -1 - i, ad: ad }; }).sort(function (x, y) { return x.ad.localeCompare(y.ad, "tr", { numeric: true }); }); }
+  if (!API) { yedek(); kapaliGoster(); }
+  else {
+    Promise.all([fetch(API + "/api/durum").then(function (r) { return r.json(); }), fetch(API + "/api/sokaklar").then(function (r) { return r.json(); })])
+      .then(function (x) { sokaklar = x[1].sokaklar; if (x[0].acik) { acik = true; $("#gonder").disabled = false; } else kapaliGoster(); istatistik(); })
+      .catch(function () { yedek(); kapaliGoster(); $("#kapali").textContent = "Sunucuya şu an ulaşılamıyor. Lütfen daha sonra tekrar deneyin."; });
+  }
+})();
+</script>
+</body>
+</html>

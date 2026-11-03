@@ -1,0 +1,11 @@
+{
+  "name": "kavaklidere-fiber",
+  "private": true,
+  "scripts": {
+    "yerel": "wrangler dev --local",
+    "yerel-sema": "wrangler d1 execute kavaklidere-fiber --local --file=schema.sql",
+    "sema": "wrangler d1 execute kavaklidere-fiber --remote --file=schema.sql",
+    "yayinla": "wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "^4.40.0" }
+}

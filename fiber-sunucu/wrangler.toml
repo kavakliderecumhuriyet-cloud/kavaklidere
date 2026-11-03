@@ -1,0 +1,16 @@
+name = "kavaklidere-fiber"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Site adresi (CORS). Birden fazla adres virgülle ayrılır.
+[vars]
+IZINLI_KOKEN = "https://kavakliderem.com,https://www.kavakliderem.com"
+# "1" yapıldığında başvurular açılır. KVKK metni ve WhatsApp numarası onaylanmadan açmayın.
+ACIK = "0"
+# Kamuya açık sonuçlarda bu sayının altındaki sokaklar "Diğer sokaklar" içinde toplanır.
+GIZLEME_ESIGI = "5"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kavaklidere-fiber"
+database_id = "BURAYA-D1-VERITABANI-KIMLIGI"

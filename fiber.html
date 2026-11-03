@@ -123,6 +123,7 @@
       <div class="hp" aria-hidden="true"><label for="web_sitesi">Bu alanı boş bırakın</label><input type="text" id="web_sitesi" tabindex="-1" autocomplete="off"></div>
 
       <label class="chk"><input type="checkbox" id="kvkk"> <span><a href="/fiber-kvkk.html" target="_blank" rel="noopener">Kişisel verilerin işlenmesine ilişkin aydınlatma metnini</a> okudum.</span></label>
+      <label class="chk"><input type="checkbox" id="acikRiza"> <span>Sokak, bina ve daire bilgimin fiber altyapı talebinin belirlenmesi amacıyla işlenmesine ve bu bilgilerin sitenin teknik altyapısını sağlayan Cloudflare'in yurt dışındaki sunucularında saklanmasına <strong>açık rıza veriyorum</strong>.</span></label>
 
       <p class="note" style="margin:0">Ad, telefon veya kimlik bilgisi istenmez. Bu form abonelik sözleşmesi veya kesin abonelik taahhüdü değildir. Aynı adresten tekrar gönderirseniz son cevabınız geçerli olur.</p>
 
@@ -204,9 +205,10 @@
     if (!must && !daire) { mesaj("Lütfen daire numarasını yazın veya “Müstakil ev”i işaretleyin.", "err"); $("#daire").focus(); return; }
     if (!cev) { mesaj("Lütfen abonelik tercihinizi seçin.", "err"); return; }
     if (!$("#kvkk").checked) { mesaj("Lütfen aydınlatma metnini okuduğunuzu onaylayın.", "err"); return; }
+    if (!$("#acikRiza").checked) { mesaj("Başvurunun kaydedilebilmesi için açık rıza kutusunu işaretlemeniz gerekir.", "err"); return; }
     var b = $("#gonder"); b.disabled = true; b.textContent = "Kaydediliyor…";
     fetch(API + "/api/talep", { method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify({ sokak_id: secili.id, bina: bina, daire: daire, mustakil: must, cevap: cev, kvkk: true, web_sitesi: $("#web_sitesi").value }) })
+      body: JSON.stringify({ sokak_id: secili.id, bina: bina, daire: daire, mustakil: must, cevap: cev, kvkk: true, acik_riza: true, web_sitesi: $("#web_sitesi").value }) })
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         if (x.ok && x.j.tamam) {

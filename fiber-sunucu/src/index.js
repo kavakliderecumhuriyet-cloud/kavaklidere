@@ -115,6 +115,7 @@ async function talepKaydet(req, env) {
   try { g = await req.json(); } catch { return [{ hata: "Geçersiz istek." }, 400]; }
   if (g.web_sitesi) return [{ tamam: true, durum: "yeni" }, 200]; // bot tuzağı: sessizce yok say
   if (g.kvkk !== true) return [{ hata: "Lütfen aydınlatma metnini okuduğunuzu onaylayın." }, 400];
+  if (g.acik_riza !== true) return [{ hata: "Başvurunun kaydedilebilmesi için açık rıza gerekir." }, 400];
   const sokakId = Number(g.sokak_id);
   if (!Number.isInteger(sokakId)) return [{ hata: "Lütfen sokağınızı listeden seçin." }, 400];
   const sokak = await env.DB.prepare("SELECT id FROM sokaklar WHERE id = ? AND aktif = 1").bind(sokakId).first();

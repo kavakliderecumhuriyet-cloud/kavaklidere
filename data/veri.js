@@ -36,6 +36,13 @@ window.SITE_DATA = {
       link: "/fiber.html", linkYazi: "Fiber Talebimi Kaydet →",
       tarih: "2026-11-03", olay: "Ad ve telefon istenmez · 1 dakikadan kısa sürer", kaynak: "Mahalle Muhtarlığı" },
 
+    { id: "cennet-elmasi-yarismasi-2026", tur: "onemli", kat: "Etkinlik",
+      baslik: "En Güzel Cennet Elması Yarışması",
+      metin: "6–8 Kasım tarihlerinde düzenlenecek 2. Geleneksel Cennet Elması Festivalimizde, yaş ve kuru olmak üzere 2 kategoride en güzel cennet elması yarışması yapılacaktır. Yarışma 7 Kasım Cumartesi saat 15.00'te Kavaklıdere Eski Belediye Binası'nda yapılacaktır. Katılmak isteyen vatandaşlarımız, belediye binamızda Kavaklıdere koordinatörümüz İlker Şahin'e ÇKS belgeleri ile isimlerini yazdırabilir. Çeşitli sürpriz hediyeler verilecektir.",
+      foto: "assets/duyuru-cennet-elmasi-yarismasi.jpg", fotoAlt: "En Güzel Cennet Elması Yarışması afişi, 7 Kasım Cumartesi 15.00, Kavaklıdere Eski Belediye Binası, kuru ve yaş kategoriler",
+      tarih: "2026-11-04", olay: "7 Kasım Cumartesi 15.00 · Kavaklıdere Eski Belediye Binası", bitis: "2026-11-08",
+      kaynak: "Muhtar Salih Taşlıyol" },
+
     { id: "kavaklderespor-futbol-okulu", tur: "onemli", kat: "Spor",
       baslik: "Kavaklıderespor Futbol Okulu kayıtları başladı",
       metin: "Kavaklıdere'de futbol heyecanı başlıyor! Kavaklıderespor Futbol Okulu, çocuklarımızın fiziksel, zihinsel ve sosyal gelişimine katkı sağlamak ve spor disiplini kazandırmak için yola çıkıyor. 7–14 yaş arası çocuklar için özel antrenman programları, UEFA C lisanslı antrenör eşliğinde eğitim ve haftanın belirli günlerinde düzenli antrenmanlar. Başvuru ve bilgi için: Oktay Aysal, 0546 543 24 77. Tüm Kavaklıdere çocukları davetlidir.",

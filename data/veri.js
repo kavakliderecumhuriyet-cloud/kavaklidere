@@ -36,6 +36,12 @@ window.SITE_DATA = {
       link: "/fiber.html", linkYazi: "Fiber Talebimi Kaydet →",
       tarih: "2026-11-03", olay: "Ad ve telefon istenmez · 1 dakikadan kısa sürer", kaynak: "Mahalle Muhtarlığı" },
 
+    { id: "trafik-bilgilendirme-toplantisi", tur: "onemli", kat: "Muhtarlık",
+      baslik: "Trafik bilgilendirme toplantısı – 6 Kasım Cuma 14.00",
+      metin: "Mahalle muhtarlığımızdan duyurulur: 6 Kasım Cuma günü saat 14.00'te mahallemiz Çok Programlı Lisesi konferans salonunda, İlçe Jandarma Komutanlığımız ve trafik denetleme ekipleri tarafından bilgilendirme toplantısı yapılacaktır. Konular: yeni trafik yönetmeliği, plaka, ses sistemleri ile elektrikli araçlarda ve motosikletlerde istenen belgeler. Tüm vatandaşlarımız davetlidir.",
+      tarih: "2026-11-05", olay: "6 Kasım Cuma 14.00 · Çok Programlı Lise konferans salonu", bitis: "2026-11-06",
+      kaynak: "Mahalle Muhtarlığı" },
+
     { id: "cennet-elmasi-yarismasi-2026", tur: "onemli", kat: "Etkinlik",
       baslik: "En Güzel Cennet Elması Yarışması",
       metin: "6–8 Kasım tarihlerinde düzenlenecek 2. Geleneksel Cennet Elması Festivalimizde, yaş ve kuru olmak üzere 2 kategoride en güzel cennet elması yarışması yapılacaktır. Yarışma 7 Kasım Cumartesi saat 15.00'te Kavaklıdere Eski Belediye Binası'nda yapılacaktır. Katılmak isteyen vatandaşlarımız, belediye binamızda Kavaklıdere koordinatörümüz İlker Şahin'e ÇKS belgeleri ile isimlerini yazdırabilir. Çeşitli sürpriz hediyeler verilecektir.",

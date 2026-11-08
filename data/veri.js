@@ -36,6 +36,13 @@ window.SITE_DATA = {
       link: "/fiber.html", linkYazi: "Fiber Talebimi Kaydet →",
       tarih: "2026-11-03", olay: "Ad ve telefon istenmez · 1 dakikadan kısa sürer", kaynak: "Mahalle Muhtarlığı" },
 
+    { id: "galeri-cennet-elmasi-ilk-gun", tur: "bilgi", kat: "Etkinlik",
+      baslik: "2. Cennet Elması Festivali'nin ilk gününden kareler",
+      metin: "Kavaklıderemiz 2. Cennet Elması Festivali'nin ilk gününde Halil Yıldız ve Asil Deniz Yıldız sahne aldı. Emeği geçen herkese teşekkür ederiz. Festivalden fotoğrafları yeni resim galerimizde bulabilirsiniz.",
+      foto: "assets/galeri/cennet-elmasi-2026-2-k.jpg", fotoAlt: "Festival sahnesinde toplu fotoğraf",
+      link: "#galeri", linkYazi: "Fotoğraflara bak →",
+      tarih: "2026-11-08", olay: "Resim galerisinde 4 fotoğraf", kaynak: "Mahalle Muhtarlığı" },
+
     { id: "trafik-bilgilendirme-toplantisi", tur: "onemli", kat: "Muhtarlık",
       baslik: "Trafik bilgilendirme toplantısı – 6 Kasım Cuma 14.00",
       metin: "Mahalle muhtarlığımızdan duyurulur: 6 Kasım Cuma günü saat 14.00'te mahallemiz Çok Programlı Lisesi konferans salonunda, İlçe Jandarma Komutanlığımız ve trafik denetleme ekipleri tarafından bilgilendirme toplantısı yapılacaktır. Konular: yeni trafik yönetmeliği, plaka, ses sistemleri ile elektrikli araçlarda ve motosikletlerde istenen belgeler. Tüm vatandaşlarımız davetlidir.",
@@ -128,6 +135,18 @@ window.SITE_DATA = {
 
   evraklar: [
     { no: "KVK-0001", tur: "İkametgâh belgesi (örnek)", durum: "hazir", tarih: "2026-10-15" }
+  ],
+
+  // Resim galerisi: her albüm bir etkinlik. Fotoğraflar assets/galeri/ klasöründe (büyük + "-k" küçük önizleme).
+  galeri: [
+    { id: "cennet-elmasi-festivali-2026", baslik: "2. Cennet Elması Festivali – İlk gün", tarih: "2026-11-06",
+      aciklama: "Festivalimizin ilk gününde Halil Yıldız ve Asil Deniz Yıldız sahne aldı. Emeği geçen herkese teşekkür ederiz.",
+      fotolar: [
+        { src: "assets/galeri/cennet-elmasi-2026-1.jpg", alt: "Sahnede Kavaklıdere Cennet Elması Festivali kasası takdim ediliyor" },
+        { src: "assets/galeri/cennet-elmasi-2026-2.jpg", alt: "Festival sahnesinde toplu fotoğraf, çiçek ve cennet elması kasalarıyla" },
+        { src: "assets/galeri/cennet-elmasi-2026-3.jpg", alt: "Festival alanında konseri izleyen konuklar ve kalabalık" },
+        { src: "assets/galeri/cennet-elmasi-2026-4.jpg", alt: "Ön sırada konseri izleyen konuklar, arkada festival kalabalığı" }
+      ] }
   ],
 
   videolar: [

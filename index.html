@@ -25,7 +25,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://api.open-meteo.com">
 <link rel="stylesheet" href="assets/fonts.css?v=12">
-<link rel="stylesheet" href="assets/site.css?v=11">
+<link rel="stylesheet" href="assets/site.css?v=13">
 <script>
   /* Tema seçimini erkenden uygula (yanıp sönmeyi önler) */
   try{var t=localStorage.getItem("tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}
@@ -95,6 +95,7 @@
       <a href="#ilanlar" data-r="ilanlar">Satılık</a>
       <a href="#kiralik" data-r="kiralik">Kiralık</a>
       <a href="#evrak" data-r="evrak">Evrak Takibi</a>
+      <a href="#galeri" data-r="galeri">Galeri</a>
       <a href="#videolar" data-r="videolar">Videolar</a>
       <a href="#mahallemiz" data-r="mahallemiz">Mahallemiz</a>
     </nav>
@@ -288,6 +289,12 @@
   </div>
 </div>
 
+<!-- ================= GALERİ ================= -->
+<div class="view wrap" data-view="galeri" hidden>
+  <div class="page-head"><h1>Resim galerisi</h1><p>Mahallemizden etkinlik ve gün fotoğrafları. Büyütmek için fotoğrafa dokunun.</p></div>
+  <div id="gListe" class="albums"></div>
+</div>
+
 <!-- ================= VİDEOLAR ================= -->
 <div class="view wrap" data-view="videolar" hidden>
   <div class="page-head"><h1>Videolar</h1><p>Videolar YouTube'da açılır. Mahallemize ait videolar eklendikçe burada yer alacak.</p></div>
@@ -371,6 +378,12 @@
 </main>
 
 <!-- Duyuru detayı -->
+<dialog class="lightbox" id="lb" aria-label="Fotoğraf">
+  <button type="button" class="lb-btn lb-x" id="lbKapat" aria-label="Kapat">✕</button>
+  <button type="button" class="lb-btn lb-prev" id="lbOnceki" aria-label="Önceki fotoğraf">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbAlt"></figcaption></figure>
+  <button type="button" class="lb-btn lb-next" id="lbSonraki" aria-label="Sonraki fotoğraf">›</button>
+</dialog>
 <dialog class="detail" id="detay" aria-labelledby="detayBaslik">
   <div class="close"><button type="button" class="icon-btn" id="detayKapat" aria-label="Kapat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   <div class="bd" id="detayIcerik"></div>
@@ -387,7 +400,7 @@
     </div>
     <div>
       <h2>Sayfalar</h2>
-      <ul><li><a href="#duyurular">Duyurular</a></li><li><a href="#ilanlar">Satılık ilanlar</a></li><li><a href="#kiralik">Kiralık ilanlar</a></li><li><a href="#evrak">Evrak takibi</a></li><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#mahallemiz">Mahallemiz</a></li><li><a href="/fiber.html">Fiber internet talebi</a></li><li><a href="/kurulum.html">Uygulamayı telefona kur</a></li><li><a href="/gizlilik.html">Gizlilik ve çerezler</a></li></ul>
+      <ul><li><a href="#duyurular">Duyurular</a></li><li><a href="#ilanlar">Satılık ilanlar</a></li><li><a href="#kiralik">Kiralık ilanlar</a></li><li><a href="#evrak">Evrak takibi</a></li><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#mahallemiz">Mahallemiz</a></li><li><a href="#galeri">Resim galerisi</a></li><li><a href="/fiber.html">Fiber internet talebi</a></li><li><a href="/kurulum.html">Uygulamayı telefona kur</a></li><li><a href="/gizlilik.html">Gizlilik ve çerezler</a></li></ul>
     </div>
     <div>
       <h2>Önemli numaralar</h2>
@@ -404,7 +417,7 @@
   </div>
 </footer>
 
-<script src="data/veri.js?v=11"></script>
-<script src="assets/app.js?v=11"></script>
+<script src="data/veri.js?v=13"></script>
+<script src="assets/app.js?v=13"></script>
 </body>
 </html>

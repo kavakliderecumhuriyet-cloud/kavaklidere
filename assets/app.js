@@ -369,6 +369,38 @@
       '</span><span class="play" aria-hidden="true"></span><span class="dur">' + esc(v.sure || "") + '</span></div><div class="bd"><h3>' + esc(v.baslik) + "</h3></div></a>";
   }).join("");
 
+  /* ---------- Resim galerisi ---------- */
+  (function () {
+    var albums = (D.galeri || []).slice().sort(function (a, b) { return (b.tarih || "").localeCompare(a.tarih || ""); });
+    var kucuk = function (src) { return src.replace(/\.jpg$/i, "-k.jpg"); };
+    $("#gListe").innerHTML = albums.length ? albums.map(function (al, ai) {
+      return '<section class="album"><h2>' + esc(al.baslik) + '</h2><p class="muted">' + esc(fmtDate ? fmtDate(al.tarih) : al.tarih) + (al.aciklama ? " · " + esc(al.aciklama) : "") + '</p><div class="g-grid">' +
+        al.fotolar.map(function (f, fi) {
+          return '<button type="button" class="g-item" data-a="' + ai + '" data-f="' + fi + '"><img src="' + esc(kucuk(f.src)) + '" alt="' + esc(f.alt || "") + '" loading="lazy" decoding="async" width="640" height="427"></button>';
+        }).join("") + "</div></section>";
+    }).join("") : '<p class="muted">Henüz fotoğraf eklenmedi.</p>';
+    var lb = $("#lb"), cur = [0, 0];
+    function goster() {
+      var f = albums[cur[0]].fotolar[cur[1]], n = albums[cur[0]].fotolar.length;
+      $("#lbImg").src = f.src; $("#lbImg").alt = f.alt || "";
+      $("#lbAlt").textContent = (f.alt || "") + "  (" + (cur[1] + 1) + " / " + n + ")";
+    }
+    function adim(d) { var n = albums[cur[0]].fotolar.length; cur[1] = (cur[1] + d + n) % n; goster(); }
+    $("#gListe").addEventListener("click", function (e) {
+      var b = e.target.closest(".g-item"); if (!b) return;
+      cur = [+b.dataset.a, +b.dataset.f]; goster();
+      if (typeof lb.showModal === "function") lb.showModal(); else lb.setAttribute("open", "");
+    });
+    $("#lbKapat").addEventListener("click", function () { lb.close(); });
+    $("#lbOnceki").addEventListener("click", function () { adim(-1); });
+    $("#lbSonraki").addEventListener("click", function () { adim(1); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+    lb.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") adim(-1); if (e.key === "ArrowRight") adim(1); });
+    var x0 = null;
+    lb.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) adim(dx < 0 ? 1 : -1); x0 = null; });
+  })();
+
   /* ---------- Muhtar ve sabit bilgiler ---------- */
   $("#muhtarAd").textContent = M.muhtar || ""; $("#fMuhtar").textContent = M.muhtar || "";
   $("#muhtarWa").textContent = M.whatsappGoster || ""; $("#muhtarWa").href = waLink("");
@@ -469,7 +501,7 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
   /* ---------- Yönlendirme ---------- */
-  var VIEWS = ["", "duyurular", "ilanlar", "kiralik", "evrak", "videolar", "mahallemiz", "hizmetler"];
+  var VIEWS = ["", "duyurular", "ilanlar", "kiralik", "evrak", "galeri", "videolar", "mahallemiz", "hizmetler"];
   function route() {
     var h = (location.hash || "").replace(/^#\/?/, ""), detail = null;
     if (/^d-/.test(h)) { detail = h.slice(2); h = lastRoute !== null ? lastRoute : "duyurular"; }
@@ -481,7 +513,7 @@
     $$("#menu a").forEach(function (a) { if (a.dataset.r === h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
     setMenu(false);
     lastRoute = h; document.body.dataset.ready = "1";
-    var t = { "": "Kavaklıdere Cumhuriyet Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "Satılık ilanlar", kiralik: "Kiralık ilanlar", evrak: "Evrak takibi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
+    var t = { "": "Kavaklıdere Cumhuriyet Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "Satılık ilanlar", kiralik: "Kiralık ilanlar", evrak: "Evrak takibi", galeri: "Resim galerisi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
     document.title = h ? t + " – Kavaklıdere Cumhuriyet Mahallesi" : t;
     if (detail) openDetail(detail);
     else { closeDetail(); if (changed) { window.scrollTo(0, 0); if (h) $("#icerik").focus({ preventScroll: true }); } }

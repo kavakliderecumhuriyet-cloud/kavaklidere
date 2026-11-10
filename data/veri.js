@@ -30,6 +30,12 @@ window.SITE_DATA = {
   sayac: { servis: "https://abacus.jasoncameron.dev", ad: "kavaklidere-cumhuriyet-portal", canli: null },
 
   duyurular: [
+    { id: "10-kasim-2026", tur: "onemli", kat: "Anma", sabit: true,
+      baslik: "10 Kasım: Atatürk'ü saygı ve özlemle anıyoruz",
+      metin: "Cumhuriyetimizin kurucusu Gazi Mustafa Kemal Atatürk'ü ebediyete intikalinin 88. yılında saygı, minnet ve özlemle anıyoruz. Aziz hatırası önünde saygıyla eğiliyoruz. “Beni görmek demek mutlaka yüzümü görmek değildir. Benim fikirlerimi, benim duygularımı anlıyorsanız ve hissediyorsanız bu kâfidir.”",
+      foto: "assets/duyuru-10-kasim-2026.jpg", fotoAlt: "Siyah beyaz 10 Kasım anma görseli: 10 Kasım 1938–2026, Gazi Mustafa Kemal Atatürk, saat 09.05 saygı duruşu",
+      tarih: "2026-11-10", olay: "Saat 09.05 · Saygı duruşu", bitis: "2026-11-10", kaynak: "Mahalle Muhtarlığı" },
+
     { id: "fiber-internet-talebi", tur: "onemli", kat: "Muhtarlık", sabit: true,
       baslik: "Fiber internet talebinizi kaydedin",
       metin: "Kavaklıdere'ye Türk Telekom fiber internet altyapısı gelmesi için hangi sokaklarda ihtiyaç olduğunu belirliyoruz. Sokağınızı, bina ve daire numaranızı seçip fiber abonesi olmak isteyip istemediğinizi işaretlemeniz yeterli. Ad, telefon veya kimlik bilgisi istenmez; bir dakikadan kısa sürer. Talepler sokak bazında toplanıp ilgili kurumlara iletilecektir.",

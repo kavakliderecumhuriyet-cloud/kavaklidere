@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#2E6B3E">
 <link rel="stylesheet" href="assets/fonts.css?v=12">
 <link rel="stylesheet" href="assets/site.css">
-<script>try{var t=localStorage.getItem("tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("tema")||sessionStorage.getItem("tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
   .k-head{padding-block:28px 8px}
   .k-head h1{font-size:clamp(28px,4.5vw,40px)}
@@ -147,7 +147,7 @@
   </div>
   <a class="btn back" href="/">← Kavaklıdere ana sayfasına dön</a>
 </main>
-<footer><div class="wrap"><p class="fine" style="margin:0">Kavaklıdere Cumhuriyet Mahallesi · Alaşehir / Manisa · <a href="/gizlilik.html">Gizlilik ve çerezler</a></p></div></footer>
+<footer><div class="wrap"><p class="fine" style="margin:0">Kavaklıdere Cumhuriyet Mahallesi · Alaşehir / Manisa · <a href="/gizlilik.html">Gizlilik</a> · <a href="/cerez-politikasi.html">Çerez Politikası</a> · <a href="#" data-cerez-ac>Çerez tercihleri</a></p></div></footer>
 <script>
 (function(){
   var tabs=[].slice.call(document.querySelectorAll(".tabs button")),pan=[].slice.call(document.querySelectorAll(".k-panel"));
@@ -159,5 +159,6 @@
   if("serviceWorker" in navigator&&location.protocol==="https:")navigator.serviceWorker.register("/sw.js").catch(function(){});
 })();
 </script>
+<script src="assets/cerez.js?v=15"></script>
 </body>
 </html>

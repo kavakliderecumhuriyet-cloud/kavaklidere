@@ -9,8 +9,9 @@
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var store = {
-    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    get: function (k) { try { return localStorage.getItem(k) || sessionStorage.getItem(k); } catch (e) { return null; } },
+    // Kalıcı tercih (tema, kurulum kutusu) yalnızca işlevsel çerez izni varsa saklanır; yoksa yalnızca bu oturumda.
+    set: function (k, v) { try { if (window.Cerez && window.Cerez.izin("islevsel")) localStorage.setItem(k, v); else sessionStorage.setItem(k, v); } catch (e) {} },
     sget: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
     sset: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
   };
@@ -451,9 +452,14 @@
     $("#svcTeknik").href = link; $("#svcTeknikAd").textContent = T.ad;
   })();
 
-  /* ---------- Ziyaretçi sayacı ---------- */
-  (function () {
+  /* ---------- Ziyaretçi sayacı (yalnızca analitik çerez izniyle) ---------- */
+  function sayacBaslat() {
     var S = D.sayac; if (!S || !window.fetch) return;
+    if (!(window.Cerez && window.Cerez.izin("analitik"))) {
+      $("#sayac").hidden = true;
+      $("#fSayac").innerHTML = 'Ziyaret sayacı yalnızca analitik çerez izniyle çalışır. <a href="#" data-cerez-ac>Çerez tercihleri</a>';
+      return;
+    }
     var real = /github\.io$|kavaklidere/i.test(location.hostname) && !/localhost|127\.0\.0\.1/.test(location.hostname);
     var nf = new Intl.NumberFormat("tr-TR");
     var day = TODAY.replace(/-/g, "");
@@ -477,7 +483,9 @@
       countUp($("#cToplam"), v[0].value); countUp($("#cBugun"), v[1].value);
       $("#fSayac").textContent = "Toplam " + nf.format(v[0].value) + " ziyaret · Bugün " + nf.format(v[1].value);
     }).catch(function () { /* servis yanıt vermezse sayaç gizli kalır */ });
-  })();
+  }
+  sayacBaslat();
+  document.addEventListener("cerez-degisti", sayacBaslat);
 
   $("#fGuncel").textContent = fmtDate(D.guncelleme, { hour: "2-digit", minute: "2-digit" });
   (function () { var m = Number(new Intl.DateTimeFormat("en-US", { timeZone: TZ, month: "numeric" }).format(new Date()));

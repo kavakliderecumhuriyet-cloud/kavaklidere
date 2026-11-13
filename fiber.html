@@ -151,15 +151,15 @@
   var nf = new Intl.NumberFormat("tr-TR");
   // Türkçe duyarlı arama: büyük/küçük harf ve I/İ/ı/i farkı gözetmeden, harf işaretleri korunarak
   var norm = function (s) { return String(s).toLocaleLowerCase("tr-TR").replace(/\s+/g, " ").trim(); };
-  var gevsek = function (s) { return norm(s).replace(/ç/g, "c").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ş/g, "s").replace(/ü/g, "u"); };
+  var gevsek = function (s) { return norm(s).replace(/ç/g, "c").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ş/g, "s").replace(/ü/g, "u").replace(/[^a-z0-9]+/g, " ").replace(/([a-z])(\d)/g, "$1 $2").replace(/(\d)([a-z])/g, "$1 $2").replace(/\s+/g, " ").trim(); };
 
   var sokaklar = [], secili = null, acik = false;
 
   /* ---- Sokak seçici ---- */
   var inp = $("#sokak"), lb = $("#sokakList"), aktif = -1, gorunen = [];
   function liste(q) {
-    var n = norm(q), g = gevsek(q);
-    gorunen = sokaklar.filter(function (s) { return !q || norm(s.ad).indexOf(n) >= 0 || gevsek(s.ad).indexOf(g) >= 0; });
+    var n = norm(q), g = gevsek(q), parca = g ? g.split(" ") : [];
+    gorunen = sokaklar.filter(function (s) { if (!q || norm(s.ad).indexOf(n) >= 0) return true; var a = " " + gevsek(s.ad); return parca.length > 0 && parca.every(function (p) { return a.indexOf(" " + p) >= 0; }); });
     aktif = gorunen.length ? 0 : -1;
     lb.innerHTML = gorunen.length ? gorunen.map(function (s, i) {
       return '<li role="option" id="sk' + i + '" aria-selected="' + (i === aktif) + '" data-i="' + i + '">' + esc(s.ad) + "</li>";

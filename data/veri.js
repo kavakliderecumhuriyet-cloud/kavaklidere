@@ -15,7 +15,7 @@ window.SITE_DATA = {
   guncelleme: "2026-11-01T16:31:00+03:00",
 
   mahalle: {
-    ad: "Kavaklıdere Cumhuriyet Mahallesi",
+    ad: "Kavaklıdere Mahallesi",
     ilce: "Alaşehir",
     il: "Manisa",
     konum: { lat: 38.42573, lon: 28.35379 }, // GeoNames / Open-Meteo, Kavaklıdere – Alaşehir

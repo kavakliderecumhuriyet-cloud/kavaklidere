@@ -1,4 +1,4 @@
-# Kavaklıdere Cumhuriyet Mahallesi
+# Kavaklıdere Mahallesi
 
 Alaşehir / Manisa – dijital mahalle portalı: https://kavakliderem.com
 

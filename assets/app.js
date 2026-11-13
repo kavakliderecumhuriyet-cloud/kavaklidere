@@ -521,8 +521,8 @@
     $$("#menu a").forEach(function (a) { if (a.dataset.r === h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
     setMenu(false);
     lastRoute = h; document.body.dataset.ready = "1";
-    var t = { "": "Kavaklıdere Cumhuriyet Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "Satılık ilanlar", kiralik: "Kiralık ilanlar", evrak: "Evrak takibi", galeri: "Resim galerisi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
-    document.title = h ? t + " – Kavaklıdere Cumhuriyet Mahallesi" : t;
+    var t = { "": "Kavaklıdere Mahallesi – Alaşehir, Manisa", duyurular: "Duyurular", ilanlar: "Satılık ilanlar", kiralik: "Kiralık ilanlar", evrak: "Evrak takibi", galeri: "Resim galerisi", videolar: "Videolar", mahallemiz: "Mahallemiz", hizmetler: "Hizmetler" }[h];
+    document.title = h ? t + " – Kavaklıdere Mahallesi" : t;
     if (detail) openDetail(detail);
     else { closeDetail(); if (changed) { window.scrollTo(0, 0); if (h) $("#icerik").focus({ preventScroll: true }); } }
   }
